@@ -1,0 +1,238 @@
+[gd_scene load_steps=22 format=3 uid="uid://03o3nqqcx7k7"]
+
+[ext_resource type="Script" uid="uid://82rdtvosb7gx" path="res://scripts/Mundo3.cs" id="1_8q8mn"]
+[ext_resource type="Texture2D" uid="uid://sedxdqthglgf" path="res://assets/Fondo_Surrealismo.png" id="2_0nedo"]
+[ext_resource type="AudioStream" uid="uid://b1m1rwf5w1a42" path="res://music/Slow Burn.mp3" id="3_27jmu"]
+[ext_resource type="Script" uid="uid://dl4q7q2o67yb6" path="res://scripts/Musica.cs" id="4_form0"]
+[ext_resource type="PackedScene" uid="uid://c60o3w37ue45k" path="res://escenas/personaje.tscn" id="5_yuspp"]
+[ext_resource type="PackedScene" uid="uid://dtvvpjxan4t1s" path="res://escenas/circulo.tscn" id="6_6b5o3"]
+[ext_resource type="Script" uid="uid://ctj347id36qo1" path="res://scripts/Pausa.cs" id="7_20cgm"]
+[ext_resource type="Script" uid="uid://d3xwrwbi4fc5q" path="res://scripts/PauseMenu.cs" id="8_3g04s"]
+[ext_resource type="Texture2D" uid="uid://crqll8tl0f8ab" path="res://assets/Play_Button.png" id="9_pvbg3"]
+[ext_resource type="Texture2D" uid="uid://dlq0r6bu20ihq" path="res://assets/Options_Button.png" id="10_i4pv8"]
+[ext_resource type="Texture2D" uid="uid://cv273f2aq8210" path="res://assets/Menu_Button.png" id="11_vibsa"]
+[ext_resource type="Texture2D" uid="uid://5tsacpaxgdxh" path="res://assets/Exit_Button.png" id="12_j77cs"]
+[ext_resource type="Texture2D" uid="uid://byf35wk4dh8f" path="res://assets/High_Volume_Button.png" id="13_ky6oj"]
+[ext_resource type="Texture2D" uid="uid://cly4ircj4jfo4" path="res://assets/Medium_Volume_Button.png" id="14_lyptm"]
+[ext_resource type="Texture2D" uid="uid://bmqa5x76tu1ng" path="res://assets/Low_Volume_Button.png" id="15_y2a30"]
+[ext_resource type="Texture2D" uid="uid://cyprggwfwmouw" path="res://assets/Mute_Button.png" id="16_5ffwt"]
+[ext_resource type="Texture2D" uid="uid://csiapxdaad5wo" path="res://assets/Options_2_Button.png" id="17_nrq62"]
+[ext_resource type="Texture2D" uid="uid://fmheomor8un0" path="res://assets/Achivements_Button.png" id="18_8syd2"]
+[ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="19_d0f3g"]
+[ext_resource type="Texture2D" uid="uid://djhmqrmm16jb6" path="res://assets/Candado_Naranja_Morado.png" id="20_8u36a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe15i"]
+size = Vector2(72, 39)
+
+[node name="mundo3" type="Node2D"]
+script = ExtResource("1_8q8mn")
+
+[node name="FondoSurrealismo" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 324)
+texture = ExtResource("2_0nedo")
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1521, -67)
+stream = ExtResource("3_27jmu")
+autoplay = true
+script = ExtResource("4_form0")
+
+[node name="personaje" parent="." instance=ExtResource("5_yuspp")]
+z_index = 2
+position = Vector2(560, 621)
+
+[node name="Enemigos" type="CanvasLayer" parent="."]
+
+[node name="circulo" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(572, 116)
+
+[node name="circulo2" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(498, 116)
+
+[node name="circulo3" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(428, 140)
+
+[node name="circulo4" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(285, 219)
+
+[node name="circulo5" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(227, 290)
+
+[node name="circulo6" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(141, 416)
+
+[node name="circulo7" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(117, 496)
+
+[node name="circulo8" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(89, 588)
+
+[node name="circulo9" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(648, 125)
+
+[node name="circulo10" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(711, 139)
+
+[node name="circulo11" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(783, 158)
+
+[node name="circulo12" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(901, 273)
+
+[node name="circulo13" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(1013, 457)
+
+[node name="circulo14" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(1036, 525)
+
+[node name="circulo15" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(1051, 598)
+
+[node name="circulo16" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(358, 168)
+
+[node name="circulo17" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(980, 395)
+
+[node name="circulo18" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(944, 336)
+
+[node name="circulo19" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(174, 351)
+
+[node name="circulo20" parent="Enemigos" instance=ExtResource("6_6b5o3")]
+z_index = 1
+position = Vector2(850, 213)
+
+[node name="pausa" type="Node2D" parent="."]
+script = ExtResource("7_20cgm")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("8_3g04s")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 35.0
+scale = Vector2(29.0885, 16.6035)
+color = Color(0, 0, 0, 0.666667)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
+offset_left = 421.0
+offset_top = 139.0
+offset_right = 595.0
+offset_bottom = 387.0
+scale = Vector2(1.77151, 1.65008)
+alignment = 1
+
+[node name="Continuar" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("9_pvbg3")
+icon_alignment = 1
+
+[node name="Options" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("10_i4pv8")
+
+[node name="Menu" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("11_vibsa")
+
+[node name="Salir" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("12_j77cs")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu"]
+offset_left = 603.0
+offset_top = 186.0
+offset_right = 770.0
+offset_bottom = 452.0
+scale = Vector2(1.00973, 0.993787)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="muchoSonido" type="Button" parent="PauseMenu/VBoxContainer2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("13_ky6oj")
+flat = true
+
+[node name="sonidoParcial" type="Button" parent="PauseMenu/VBoxContainer2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("14_lyptm")
+flat = true
+
+[node name="pocoSonido" type="Button" parent="PauseMenu/VBoxContainer2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("15_y2a30")
+flat = true
+
+[node name="pantalla" type="OptionButton" parent="PauseMenu/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PauseMenu"]
+offset_left = 668.0
+offset_top = 186.0
+offset_right = 835.0
+offset_bottom = 560.0
+
+[node name="muted" type="Button" parent="PauseMenu/VBoxContainer3"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("16_5ffwt")
+flat = true
+
+[node name="ajustes" type="Button" parent="PauseMenu/VBoxContainer3"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("17_nrq62")
+flat = true
+
+[node name="logros" type="Button" parent="PauseMenu/VBoxContainer3"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("18_8syd2")
+flat = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(574, 73)
+
+[node name="Puerta" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1, -24)
+texture = ExtResource("19_d0f3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 2.5)
+shape = SubResource("RectangleShape2D_qe15i")
+
+[node name="Candado" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(574, 51)
+texture = ExtResource("20_8u36a")
