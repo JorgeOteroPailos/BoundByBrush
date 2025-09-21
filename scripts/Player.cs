@@ -115,6 +115,8 @@ public partial class Player : CharacterBody2D
 		shootTimer.WaitTime = shootCooldown;
 		shootTimer.OneShot = true;
 		AddChild(shootTimer);
+		
+		asertarColor();
 
 	
 	}
@@ -226,8 +228,47 @@ public partial class Player : CharacterBody2D
 		if(!Input.IsAnythingPressed()){
 			personajeAnimado.Play("idle");
 		}
+
+		// disparar al hacer clic
+		if (Input.IsActionJustPressed("mouse_left"))
+		{
+			Shoot(GetGlobalMousePosition());
+		}
+	}
+	
+	public void cambiarColor(){
 		
+		switch(nColores){
+				case 2:
+					if(color==2) color=4;
+					else if(color==4) color=2;
+					break;
+				case 3:
+					if(color==0) color=2;
+					else if(color==2) color=4;
+					else if(color==4) color=0;
+					break;
+				case 4:
+					if(color==0) color=2;
+					else if(color>1&&color<4) color++;
+					else if(color==4) color=0; 
+					break;
+				case 6:
+					if(color<5) color++;
+					else color=0;
+					break;
+				default:
+					break;
+			}
+			
+			asertarColor();
+			
+		
+	}
+	
+	private void asertarColor(){
 		string[] colores = { "red", "orange", "yellow", "green", "blue", "purple" };
+		string[] coloresCastellano = {"rojo", "naranja", "amarillo", "verde", "azul", "lila"};
 		texturaRueda = GD.Load<Texture2D>("res://assets/rueda_"+nColores+"_"+colores[color]+".png");
 		
 		// Obtener el nodo Sprite2D 
@@ -235,12 +276,29 @@ public partial class Player : CharacterBody2D
 
 		// Cambiar la textura
 		sprite.Texture = texturaRueda;
+		
+		//CAMBIAR EL CURSOR
+		if(!_isMobile){
+			// Cargar la textura como imagen
+			var img = GD.Load<Texture2D>("res://assets/pincel/pincel_"+coloresCastellano[color]+".png").GetImage();
+			
+			// Tamaño base relativo al viewport (por ejemplo, 4% de la altura)
+			const int tamanoCursor = 96;
+			float factor = (float)tamanoCursor / 50f; // 96/50 ≈ 1.92
 
-		// disparar al hacer clic
-		if (Input.IsActionJustPressed("mouse_left"))
-		{
-			Shoot(GetGlobalMousePosition());
+			// Redimensionar la imagen al tamaño deseado (manteniendo aspecto cuadrado)
+			img.Resize(tamanoCursor, tamanoCursor, Image.Interpolation.Nearest);
+
+			// Crear nueva textura a partir de la imagen escalada
+			var tex = ImageTexture.CreateFromImage(img);
+
+			// Si no se especifica hotspot, usar el centro
+			Vector2 centro = new Vector2(0, tamanoCursor);
+
+			// Asignar cursor personalizado
+			Input.SetCustomMouseCursor(tex, Input.CursorShape.Arrow, centro);
 		}
+
 	}
 
 	public void Shoot(Vector2 objetivo){
@@ -324,6 +382,8 @@ public partial class Player : CharacterBody2D
 				if (color < 0 || color > 5) color = 0;
 				break;
 		}
+		
+		asertarColor();
 	}
 
 

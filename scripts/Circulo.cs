@@ -75,29 +75,9 @@ public partial class Circulo : CharacterBody2D
 					
 					QueueFree(); // Eliminar el enemigo
 				};
+				
+				player.cambiarColor();
 
-				switch(player.nColores){
-				case 2:
-					if(player.color==2) player.color=4;
-					else if(player.color==4) player.color=2;
-					break;
-				case 3:
-					if(player.color==0) player.color=2;
-					else if(player.color==2) player.color=4;
-					else if(player.color==4) player.color=0;
-					break;
-				case 4:
-					if(player.color==0) player.color=2;
-					else if(player.color>1&&player.color<4) player.color++;
-					else if(player.color==4) player.color=0; 
-					break;
-				case 6:
-					if(player.color<5) player.color++;
-					else player.color=0;
-					break;
-				default:
-					break;
-			}
 			}
 		}
 	}
