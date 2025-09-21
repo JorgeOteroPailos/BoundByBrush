@@ -34,10 +34,10 @@ public partial class Player : CharacterBody2D
 	public const float speed = 270f;
 
 	// Límites del mapa
-	private float minX = 10f;
-	private float maxX = 1130f;
-	private float minY = 10f;
-	private float maxY = 638f;
+	private const float minX = 10f;
+	private const float maxX = 1130f;
+	private const float minY = 10f;
+	private const float maxY = 638f;
 	
 	private float shootCooldown = 0.7f; // tiempo mínimo entre disparos en segundos
 	private Timer shootTimer;
@@ -46,6 +46,8 @@ public partial class Player : CharacterBody2D
 	private Vector2 _joystickInput = Vector2.Zero;
 	private bool _isMobile;
 	private Func<Vector2> _getInput; // estrategia de entrada
+	
+	private const int tamanoCursor = 96;
 
 
 	public override void _Ready()
@@ -232,7 +234,8 @@ public partial class Player : CharacterBody2D
 		// disparar al hacer clic
 		if (Input.IsActionJustPressed("mouse_left"))
 		{
-			Shoot(GetGlobalMousePosition());
+			//hay una descompensación chunga entre a donde debe ir la bala y a donde va, y ns de donde sale pero aqui se arregla
+			Shoot(GetGlobalMousePosition() + new Vector2(0, tamanoCursor) - new Vector2(11 * tamanoCursor / 50f, 34 * tamanoCursor / 50f));
 		}
 	}
 	
@@ -283,7 +286,6 @@ public partial class Player : CharacterBody2D
 			var img = GD.Load<Texture2D>("res://assets/pincel/pincel_"+coloresCastellano[color]+".png").GetImage();
 			
 			// Tamaño base relativo al viewport (por ejemplo, 4% de la altura)
-			const int tamanoCursor = 96;
 			float factor = (float)tamanoCursor / 50f; // 96/50 ≈ 1.92
 
 			// Redimensionar la imagen al tamaño deseado (manteniendo aspecto cuadrado)
@@ -293,7 +295,7 @@ public partial class Player : CharacterBody2D
 			var tex = ImageTexture.CreateFromImage(img);
 
 			// Si no se especifica hotspot, usar el centro
-			Vector2 centro = new Vector2(0, tamanoCursor);
+			Vector2 centro = new Vector2(11 * factor, 34 * factor);
 
 			// Asignar cursor personalizado
 			Input.SetCustomMouseCursor(tex, Input.CursorShape.Arrow, centro);
