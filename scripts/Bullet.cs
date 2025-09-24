@@ -14,7 +14,7 @@ public partial class Bullet : Area2D
 	
 	public Player player;
 	public Vector2 Velocity = Vector2.Zero;
-	public float Speed = 600f;
+	public float Speed = 800f;
 	public float maxDistance=400;
 	private bool flagImpacte=false;
 	private Vector2 originalPosition;
@@ -29,7 +29,7 @@ public partial class Bullet : Area2D
 		
 		collisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
 		
-		string[] colores={"red", "orange", "yellow", "green", "blue", "purple"};
+		string[] colores={"red", "orange", "yellow", "green", "blue", "purple", "red"};
 	
 		default_="default_"+colores[color];
 		hit="hit_"+colores[color];

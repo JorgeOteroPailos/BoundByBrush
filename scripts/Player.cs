@@ -39,7 +39,7 @@ public partial class Player : CharacterBody2D
 	private const float minY = 10f;
 	private const float maxY = 638f;
 	
-	private float shootCooldown = 0.7f; // tiempo mínimo entre disparos en segundos
+	private float shootCooldown = 0.9f; // tiempo mínimo entre disparos en segundos
 	private Timer shootTimer;
 	
 	//joystick para pantalla táctil
@@ -239,7 +239,13 @@ public partial class Player : CharacterBody2D
 		}
 	}
 	
-	public void cambiarColor(){
+	public void cambiarColor(bool tocaJefe){
+		
+		if(tocaJefe){
+			color=6;
+			asertarColor();
+			return;
+		}
 		
 		switch(nColores){
 				case 2:
@@ -270,8 +276,8 @@ public partial class Player : CharacterBody2D
 	}
 	
 	private void asertarColor(){
-		string[] colores = { "red", "orange", "yellow", "green", "blue", "purple" };
-		string[] coloresCastellano = {"rojo", "naranja", "amarillo", "verde", "azul", "lila"};
+		string[] colores = { "red", "orange", "yellow", "green", "blue", "purple", "white" };
+		string[] coloresCastellano = {"rojo", "naranja", "amarillo", "verde", "azul", "lila", "blanco"};
 		texturaRueda = GD.Load<Texture2D>("res://assets/rueda_"+nColores+"_"+colores[color]+".png");
 		
 		// Obtener el nodo Sprite2D 

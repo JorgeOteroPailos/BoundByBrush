@@ -16,7 +16,9 @@ public partial class Mundo5 : MundoBase
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready(){
 		
-		nEnemigos=24;
+		nEnemigos=25;
+		
+		hayJefe=true;
 		
 		player = GetNode<Player>("personaje");
 		player.world="res://escenas/mundo_5.tscn";
@@ -33,6 +35,14 @@ public partial class Mundo5 : MundoBase
 				enemigos.Add(enemigo);
 
 				if(enemigo is Circulo circulo){
+					
+					if(circulo.esJefe){
+						spawnearEnemigo();
+						nEnemigo++;
+						circulo.volverJefe();
+						continue;
+					}
+					
 					circulo.VELOCIDAD*=3.3f;
 					if(nEnemigo%6==1){
 						circulo.color = 2;

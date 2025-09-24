@@ -4,6 +4,8 @@ using System;
 public partial class Circulo : CharacterBody2D
 {
 	private bool isDying = false;
+	
+	[Export] public bool esJefe = false;
 
 	private String colorEscrito=""; 
 	
@@ -62,6 +64,7 @@ public partial class Circulo : CharacterBody2D
 			}
 			else{
 				isDying = true; // Activamos estado de muerte
+				player.cambiarColor(false);
 				sprite.Play("demonio_" + colorEscrito + "_death");
 				//sprite.AnimationFinished += () => QueueFree();
 				sprite.AnimationFinished += () => {
@@ -70,13 +73,13 @@ public partial class Circulo : CharacterBody2D
 					collisionShape2D.SetDeferred("disabled", true);
 					
 					MundoBase parentNode = (MundoBase)GetParent().GetParent();
-				
+					
 					parentNode.EnemigoDerrotado();
 					
 					QueueFree(); // Eliminar el enemigo
 				};
 				
-				player.cambiarColor();
+				
 
 			}
 		}
@@ -103,7 +106,7 @@ public partial class Circulo : CharacterBody2D
 		if (isDying)
 			return;
 
-		string[] colores = { "red", "orange", "yellow", "green", "blue", "purple" };
+		string[] colores = { "red", "orange", "yellow", "green", "blue", "purple", "negro" };
 		
 		colorEscrito=colores[color];
 
@@ -160,5 +163,23 @@ public partial class Circulo : CharacterBody2D
 			if (sprite.Animation != anim)
 				sprite.Play(anim);
 		}
+	}
+	
+	public void volverJefe(){
+		this.VELOCIDAD*=2;
+		this.color=6;
+		
+		// Triplicar el tamaño del sprite
+		this.Scale *= new Vector2(3, 3);
+
+		// Ajustar el tamaño de la hitbox también
+		if (collisionShape2D.Shape is CircleShape2D circle){
+			circle.Radius *= 3;
+		}else if (collisionShape2D.Shape is RectangleShape2D rect){
+			rect.Size *= new Vector2(3, 2);
+		}
+		
+		
+		
 	}
 }

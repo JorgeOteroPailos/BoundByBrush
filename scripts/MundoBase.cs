@@ -6,6 +6,8 @@ public abstract partial class MundoBase : Node2D
 {
 	protected Player player;
 	
+	[Export] protected bool hayJefe=false;
+	
 	protected int nEnemigo=0;
 	
 	protected Random random = new Random();
@@ -24,7 +26,12 @@ public abstract partial class MundoBase : Node2D
 		{
 			GD.Print("Todos los enemigos derrotados. Cambio de escena...");
 			GetTree().ChangeSceneToFile(siguienteEscena);
+		}else if (hayJefe){
+			if(nEnemigos==1){
+				player.cambiarColor(true);
+			}
 		}
+		
 	}
 	
 	protected void spawnearEnemigo(){

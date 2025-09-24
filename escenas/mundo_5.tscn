@@ -120,6 +120,10 @@ position = Vector2(980, 429)
 z_index = 2
 position = Vector2(116, 426)
 
+[node name="jefe" parent="Enemigos" instance=ExtResource("5_t17vy")]
+position = Vector2(544, 67)
+esJefe = true
+
 [node name="FondoFinal" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
 texture = ExtResource("19_vybne")
