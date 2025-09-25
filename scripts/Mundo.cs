@@ -3,10 +3,6 @@ using System;
 
 public partial class Mundo : MundoBase
 {
-	
-	[Export]
-	public PackedScene CirculoScene;
-	
 	[Export]
 	public int nColores=6;
 	

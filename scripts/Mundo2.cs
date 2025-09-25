@@ -5,9 +5,6 @@ public partial class Mundo2 : MundoBase
 {
 	
 	[Export]
-	public PackedScene CirculoScene;
-	
-	[Export]
 	public int nColores=6;
 	
 	protected override String siguienteEscena=>"res://escenas/recoger_llave_2.tscn";

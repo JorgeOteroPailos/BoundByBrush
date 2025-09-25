@@ -90,9 +90,7 @@ private void OnBodyEntered(Node body)
 			enemyHit.Call("OnHitByBullet", this, player);
 		}
 		
-		if(player!=null){
-			player.cambiarColor(false);
-		}
+		
 	}
 }
 

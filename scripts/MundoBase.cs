@@ -6,6 +6,9 @@ public abstract partial class MundoBase : Node2D
 {
 	protected Player player;
 	
+	[Export]
+	public PackedScene CirculoScene;
+	
 	[Export] protected bool hayJefe=false;
 	
 	protected int nEnemigo=0;
@@ -14,7 +17,7 @@ public abstract partial class MundoBase : Node2D
 	
 	protected List<CharacterBody2D> enemigos = new List<CharacterBody2D>();
 	
-	protected virtual int nEnemigos { get; set; }
+	public virtual int nEnemigos { get; set; }
 	
 	protected virtual String siguienteEscena { get; }
 	
@@ -29,6 +32,7 @@ public abstract partial class MundoBase : Node2D
 		}else if (hayJefe){
 			if(nEnemigos==1){
 				player.cambiarColor(true);
+				GD.Print("Cambiando a color multicolor desde MundoBase");
 			}
 		}
 		

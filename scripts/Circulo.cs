@@ -9,6 +9,8 @@ public partial class Circulo : CharacterBody2D
 
 	public String colorEscrito=""; 
 	
+	private MundoBase padre;
+	
 	private const float RETROCESO_BALA=10;
 	private const float RETROCESO_CHOQUE=100;
 	public float VELOCIDAD=50;
@@ -28,6 +30,9 @@ public partial class Circulo : CharacterBody2D
 		sprite = GetNode<AnimatedSprite2D>("Circulo");
 
 		originalPos = GlobalPosition;
+		
+				
+		padre = (MundoBase)GetParent().GetParent();
 		
 		var area = GetNode<Area2D>("DamageArea");
 		area.BodyEntered += OnBodyEntered;
@@ -54,15 +59,14 @@ public partial class Circulo : CharacterBody2D
 					 //Detener colisiones inmediatamente 
 					collisionShape2D.SetDeferred("disabled", true);
 					
-					MundoBase parentNode = (MundoBase)GetParent().GetParent();
-					
-					parentNode.EnemigoDerrotado();
+					padre.EnemigoDerrotado();
 					
 					QueueFree(); // Eliminar el enemigo
 				};
 				
-				
-
+				if(player!=null){
+					player.cambiarColor(false);
+				}
 			}
 		}
 	}
@@ -159,4 +163,38 @@ public partial class Circulo : CharacterBody2D
 			//rect.Size *= new Vector2(1, 1);
 		}
 	}
+	
+	/*
+	private void spawnearEnemigos(){
+		// Colores que coincidan con tus animaciones
+		string[] coloresNombres = { "rojo", "naranja", "amarillo", "verde", "azul", "morado" };
+
+		float radio = 200f; // distancia desde el jugador
+		int total = 6;
+
+		for (int i = 0; i < total; i++){
+			// Instanciar la escena
+			Circulo enemigo = padre.CirculoScene.Instantiate<Circulo>();
+
+			// Asignar propiedades
+			enemigo.player = player;
+			enemigo.color = i;                     // 0..5
+			enemigo.colorEscrito = coloresNombres[i];
+
+			// Posición en círculo alrededor del jugador
+			float angulo = Mathf.Tau * i / total;  // divide 360° en 6
+			Vector2 offset = new Vector2(Mathf.Cos(angulo), Mathf.Sin(angulo)) * radio;
+			enemigo.Position = player.Position + offset;
+
+			// Añadir a la escena
+			AddChild(enemigo);
+
+			GD.Print($"Spawned enemigo {i} color={enemigo.colorEscrito} en {enemigo.Position}");
+		}
+
+		// Actualizar contador
+		padre.nEnemigos += total;
+		
+	}
+	*/
 }

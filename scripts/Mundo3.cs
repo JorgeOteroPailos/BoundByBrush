@@ -2,11 +2,7 @@ using Godot;
 using System;
 
 public partial class Mundo3 : MundoBase
-{
-	
-	[Export]
-	public PackedScene CirculoScene;
-	
+{	
 	[Export]
 	public int nColores=6;
 	
