@@ -39,7 +39,7 @@ public partial class Player : CharacterBody2D
 	private const float minY = 10f;
 	private const float maxY = 638f;
 	
-	private float shootCooldown = 0.9f; // tiempo mínimo entre disparos en segundos
+	private float shootCooldown = 0.5f; // tiempo mínimo entre disparos en segundos
 	private Timer shootTimer;
 	
 	//joystick para pantalla táctil
@@ -235,7 +235,7 @@ public partial class Player : CharacterBody2D
 		if (Input.IsActionJustPressed("mouse_left"))
 		{
 			//hay una descompensación chunga entre a donde debe ir la bala y a donde va, y ns de donde sale pero aqui se arregla
-			Shoot(GetGlobalMousePosition() + new Vector2(0, tamanoCursor) - new Vector2(11 * tamanoCursor / 50f, 34 * tamanoCursor / 50f));
+			Shoot(GlobalPosition,GetGlobalMousePosition() + new Vector2(0, tamanoCursor) - new Vector2(11 * tamanoCursor / 50f, 34 * tamanoCursor / 50f), this.color);
 		}
 	}
 	
@@ -244,6 +244,7 @@ public partial class Player : CharacterBody2D
 		if(tocaJefe){
 			color=6;
 			asertarColor();
+			GD.Print("Cambiando color a blanco");
 			return;
 		}
 		
@@ -309,17 +310,17 @@ public partial class Player : CharacterBody2D
 
 	}
 
-	public void Shoot(Vector2 objetivo){
+	public void Shoot(Vector2 origen, Vector2 objetivo, int colorDisparo){
 		
 		if(!shootTimer.IsStopped()){ return; }
 		
-		Vector2 direction = (objetivo - GlobalPosition).Normalized();
+		Vector2 direction = (objetivo - origen).Normalized();
 
 		// Instanciar bala
 		Bullet bullet = (Bullet)BulletScene.Instantiate();
-		bullet.Position = GlobalPosition;
+		bullet.Position = origen;
 		bullet.Velocity = direction;
-		bullet.color=this.color;
+		bullet.color=colorDisparo;
 		bullet.player=this;
 
 		// Añadir al árbol
@@ -393,6 +394,13 @@ public partial class Player : CharacterBody2D
 		
 		asertarColor();
 	}
-
+	/*
+	public void OnHitByBullet(Node bullet, Player player){
+		//notese que player aquí es null, pq la bala la disparó el jefe
+		if (bullet is Bullet bullet1){
+			//this.takeDamage();
+		}
+	}
+	*/
 
 }

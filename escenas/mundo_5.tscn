@@ -30,99 +30,51 @@ position = Vector2(653, 108)
 
 [node name="circulo2" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(500, 116)
+position = Vector2(424, 102)
 
 [node name="circulo3" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(435, 99)
+position = Vector2(148, 113)
 
 [node name="circulo4" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(372, 79)
-
-[node name="circulo5" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(306, 83)
+position = Vector2(983, 153)
 
 [node name="circulo6" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(235, 85)
+position = Vector2(329, 151)
 
 [node name="circulo7" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(184, 92)
+position = Vector2(205, 211)
 
 [node name="circulo8" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(127, 103)
+position = Vector2(127, 285)
 
 [node name="circulo9" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(77, 127)
+position = Vector2(276, 78)
 
 [node name="circulo10" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(785, 76)
+position = Vector2(863, 267)
 
 [node name="circulo11" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(722, 93)
+position = Vector2(796, 146)
 
 [node name="circulo12" parent="Enemigos" instance=ExtResource("5_t17vy")]
 z_index = 2
-position = Vector2(852, 92)
-
-[node name="circulo13" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(911, 110)
-
-[node name="circulo14" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(969, 141)
-
-[node name="circulo15" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(1018, 191)
-
-[node name="circulo16" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(49, 192)
-
-[node name="circulo17" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(1052, 248)
-
-[node name="circulo18" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(1070, 321)
-
-[node name="circulo19" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(49, 272)
-
-[node name="circulo20" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(1036, 383)
-
-[node name="circulo21" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(581, 126)
-
-[node name="circulo22" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(81, 355)
-
-[node name="circulo23" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(980, 429)
-
-[node name="circulo24" parent="Enemigos" instance=ExtResource("5_t17vy")]
-z_index = 2
-position = Vector2(116, 426)
+position = Vector2(902, 127)
 
 [node name="jefe" parent="Enemigos" instance=ExtResource("5_t17vy")]
-position = Vector2(544, 67)
+position = Vector2(551, 86)
 esJefe = true
+
+[node name="circulo5" parent="Enemigos" instance=ExtResource("5_t17vy")]
+z_index = 2
+position = Vector2(992, 271)
 
 [node name="FondoFinal" type="Sprite2D" parent="."]
 position = Vector2(576, 324)

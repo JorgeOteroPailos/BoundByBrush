@@ -70,7 +70,7 @@ public override void _Ready()
 				else
 				{
 					// toque fuera del joystick → disparo
-					player.Shoot(touch.Position);
+					player.Shoot(player.GlobalPosition, touch.Position, player.color);
 				}
 			}
 			else if (joystickActive && touch.Index == activeTouchId)

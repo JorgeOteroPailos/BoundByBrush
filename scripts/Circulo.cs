@@ -7,7 +7,7 @@ public partial class Circulo : CharacterBody2D
 	
 	[Export] public bool esJefe = false;
 
-	private String colorEscrito=""; 
+	public String colorEscrito=""; 
 	
 	private const float RETROCESO_BALA=10;
 	private const float RETROCESO_CHOQUE=100;
@@ -27,31 +27,14 @@ public partial class Circulo : CharacterBody2D
 		// Obtener el nodo Sprite2D
 		sprite = GetNode<AnimatedSprite2D>("Circulo");
 
-		switch(color){
-			case 0:
-				colorEscrito="red";
-				break;
-			case 1:
-				colorEscrito="orange";
-				break;
-			case 2:
-				colorEscrito="yellow";
-				break;
-			case 3:
-				colorEscrito="green";
-				break;
-			case 4:
-				colorEscrito="blue";
-				break;
-			default:
-				colorEscrito="purple";
-				break;
-		}
-
 		originalPos = GlobalPosition;
 		
 		var area = GetNode<Area2D>("DamageArea");
 		area.BodyEntered += OnBodyEntered;
+		
+		if (esJefe){
+			volverJefe();
+		}
 	}
 
 	public void OnHitByBullet(Node bullet, Player player){
@@ -64,7 +47,6 @@ public partial class Circulo : CharacterBody2D
 			}
 			else{
 				isDying = true; // Activamos estado de muerte
-				player.cambiarColor(false);
 				sprite.Play("demonio_" + colorEscrito + "_death");
 				//sprite.AnimationFinished += () => QueueFree();
 				sprite.AnimationFinished += () => {
@@ -88,7 +70,7 @@ public partial class Circulo : CharacterBody2D
 	private void OnBodyEntered(Node body){
 
 			if (body is Player jugador){
-				//GD.Print("Jugador tocado por enemigo");
+				GD.Print("Jugador tocado por enemigo "+colorEscrito);
 				if(isDying==true){
 					return;
 				}
@@ -106,15 +88,11 @@ public partial class Circulo : CharacterBody2D
 		if (isDying)
 			return;
 
-		string[] colores = { "red", "orange", "yellow", "green", "blue", "purple", "negro" };
-		
-		colorEscrito=colores[color];
-
 		// Vector dirección hacia el jugador
 		Vector2 direction = (player.Position - Position).Normalized();
 		
 		Vector2 separation = Vector2.Zero;
-		float minDistance = 20f; // Distancia mínima entre enemigos
+		float minDistance = 40f; // Distancia mínima entre enemigos
 
 		foreach (Node other in GetParent().GetChildren()){
 			if (other is Circulo otro && otro != this && !otro.isDying){
@@ -166,20 +144,19 @@ public partial class Circulo : CharacterBody2D
 	}
 	
 	public void volverJefe(){
-		this.VELOCIDAD*=2;
-		this.color=6;
+		this.VELOCIDAD/=1.5f;
+
+		
+		GD.Print("el jefe ahora es negro y color"+this.color);
 		
 		// Triplicar el tamaño del sprite
 		this.Scale *= new Vector2(3, 3);
-
+		
 		// Ajustar el tamaño de la hitbox también
 		if (collisionShape2D.Shape is CircleShape2D circle){
-			circle.Radius *= 3;
+			//circle.Radius *= 3;
 		}else if (collisionShape2D.Shape is RectangleShape2D rect){
-			rect.Size *= new Vector2(3, 2);
+			//rect.Size *= new Vector2(1, 1);
 		}
-		
-		
-		
 	}
 }

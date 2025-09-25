@@ -39,6 +39,13 @@ public abstract partial class MundoBase : Node2D
 		Circulo miCirculo = (Circulo)enemigos[nEnemigo];
 		
 		miCirculo.player=player;
+		
+		string[] colores = { "red", "orange", "yellow", "green", "blue", "purple", "negro" };
+		
+		miCirculo.colorEscrito=colores[miCirculo.color];
+		if(miCirculo.esJefe){
+			GD.Print("Asignado el color del jefe a "+miCirculo.colorEscrito);
+		}
 
 	}
 }

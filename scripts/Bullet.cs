@@ -29,7 +29,7 @@ public partial class Bullet : Area2D
 		
 		collisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
 		
-		string[] colores={"red", "orange", "yellow", "green", "blue", "purple", "red"};
+		string[] colores={"red", "orange", "yellow", "green", "blue", "purple", "white"};
 	
 		default_="default_"+colores[color];
 		hit="hit_"+colores[color];
@@ -84,17 +84,21 @@ private void OnBodyEntered(Node body)
 
 		// Reproducir animación de impacto
 		sprite.Play(hit);
+		
+		if (enemyHit != null && enemyHit.HasMethod("OnHitByBullet"))
+		{
+			enemyHit.Call("OnHitByBullet", this, player);
+		}
+		
+		if(player!=null){
+			player.cambiarColor(false);
+		}
 	}
 }
 
 	
 private void _OnAnimationFinished()
 	{
-		if (enemyHit != null && enemyHit.HasMethod("OnHitByBullet"))
-		{
-			enemyHit.Call("OnHitByBullet", this, player);
-		}
-
 	QueueFree(); // Destruye la bala al terminar la animación
 }
 
