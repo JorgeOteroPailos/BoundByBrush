@@ -69,7 +69,7 @@ z_index = 2
 position = Vector2(902, 127)
 
 [node name="jefe" parent="Enemigos" instance=ExtResource("5_t17vy")]
-position = Vector2(551, 86)
+position = Vector2(551, 200)
 esJefe = true
 
 [node name="circulo5" parent="Enemigos" instance=ExtResource("5_t17vy")]

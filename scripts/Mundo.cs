@@ -21,12 +21,14 @@ public partial class Mundo : MundoBase
 		foreach (Node child in Enemigos.GetChildren()){
 			if (child is CharacterBody2D enemigo){
 				enemigos.Add(enemigo);
+				
 
 				if (nEnemigo % 2 == 0 && enemigo is Circulo circulo){
 					circulo.color = 2;
+					
 				}
 
-				spawnearEnemigo();
+				spawnearEnemigo((Circulo)enemigo);
 				nEnemigo++;
 			}
 		}

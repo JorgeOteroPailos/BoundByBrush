@@ -36,9 +36,10 @@ public partial class Mundo3 : MundoBase
 					}else if(nEnemigo%4==3){
 						circulo.color=3;
 					}
+					spawnearEnemigo(circulo);
 				}
 
-				spawnearEnemigo();
+				
 				nEnemigo++;
 			}
 		}

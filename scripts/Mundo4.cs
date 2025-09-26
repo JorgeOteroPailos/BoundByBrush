@@ -40,9 +40,9 @@ public partial class Mundo4 : MundoBase
 					}else if(nEnemigo%6==5){
 						circulo.color=5;
 					}
+					spawnearEnemigo(circulo);
 				}
 
-				spawnearEnemigo();
 				nEnemigo++;
 			}
 		}

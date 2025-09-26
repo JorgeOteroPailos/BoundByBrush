@@ -54,9 +54,10 @@ public partial class Mundo5 : MundoBase
 						circulo.color=6;
 						circulo.VELOCIDAD/=3.3f;
 					}
+					spawnearEnemigo(circulo);
 				}
 
-				spawnearEnemigo();
+				
 				nEnemigo++;
 			}
 		}

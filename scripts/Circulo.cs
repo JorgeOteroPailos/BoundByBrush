@@ -4,6 +4,7 @@ using System;
 public partial class Circulo : CharacterBody2D
 {
 	private bool isDying = false;
+	private bool isAppearing = false;
 	
 	[Export] public bool esJefe = false;
 
@@ -43,6 +44,9 @@ public partial class Circulo : CharacterBody2D
 	}
 
 	public void OnHitByBullet(Node bullet, Player player){
+		if(isAppearing){
+			return;
+		}
 		if (bullet is Bullet bullet1)
 		{
 			if (bullet1.color != this.color){
@@ -75,7 +79,7 @@ public partial class Circulo : CharacterBody2D
 
 			if (body is Player jugador){
 				GD.Print("Jugador tocado por enemigo "+colorEscrito);
-				if(isDying==true){
+				if(isDying==true || isAppearing ==true){
 					return;
 				}
 				
@@ -89,7 +93,7 @@ public partial class Circulo : CharacterBody2D
 	
 	public override void _PhysicsProcess(double delta){
 		// Si está muriendo, no hacer nada más
-		if (isDying)
+		if (isDying || isAppearing)
 			return;
 
 		// Vector dirección hacia el jugador
@@ -197,4 +201,24 @@ public partial class Circulo : CharacterBody2D
 		
 	}
 	*/
+	
+	public void Aparecer()
+{
+	isAppearing = true;
+	sprite.Play("demonio_" + colorEscrito + "_aparecer");
+
+	// Cuando termine la animación, empezar a comportarse normal
+	sprite.AnimationFinished += OnAparecerFinished;
+}
+
+private void OnAparecerFinished()
+{
+	// Si acaba justo la animación de aparecer
+	if (sprite.Animation == "demonio_" + colorEscrito + "_aparecer")
+	{
+		isAppearing = false;
+		sprite.AnimationFinished -= OnAparecerFinished; // quitar handler para que no se dispare en otras animaciones
+	}
+}
+
 }

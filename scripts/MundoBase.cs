@@ -38,18 +38,13 @@ public abstract partial class MundoBase : Node2D
 		
 	}
 	
-	protected void spawnearEnemigo(){
-		// Instanciar una escena "Circulo.tscn"
-		Circulo miCirculo = (Circulo)enemigos[nEnemigo];
-		
+	protected void spawnearEnemigo(Circulo miCirculo){
 		miCirculo.player=player;
 		
 		string[] colores = { "red", "orange", "yellow", "green", "blue", "purple", "negro" };
 		
 		miCirculo.colorEscrito=colores[miCirculo.color];
-		if(miCirculo.esJefe){
-			GD.Print("Asignado el color del jefe a "+miCirculo.colorEscrito);
-		}
+		miCirculo.Aparecer();
 
 	}
 }
