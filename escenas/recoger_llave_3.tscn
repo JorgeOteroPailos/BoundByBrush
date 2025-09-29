@@ -1,7 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://dntuu0qua47sy"]
 
-[ext_resource type="Script" uid="uid://dgdy4f31bel2c" path="res://scripts/Pausa_VN0.cs" id="1_nm637"]
-[ext_resource type="Script" uid="uid://bu4bbwnblyaeo" path="res://scripts/PauseMenu_VN0.cs" id="2_dpeg1"]
+[ext_resource type="Script" uid="uid://d3xwrwbi4fc5q" path="res://scripts/PauseMenu.cs" id="1_c721d"]
 [ext_resource type="Texture2D" uid="uid://crqll8tl0f8ab" path="res://assets/Play_Button.png" id="3_e5bre"]
 [ext_resource type="Texture2D" uid="uid://dlq0r6bu20ihq" path="res://assets/Options_Button.png" id="4_vakna"]
 [ext_resource type="Texture2D" uid="uid://cv273f2aq8210" path="res://assets/Menu_Button.png" id="5_jhklk"]
@@ -18,6 +17,35 @@
 [ext_resource type="Texture2D" uid="uid://rgr1x4h2wuyc" path="res://assets/Llave_Naranja_Morada_Animacion_Centrada.png" id="16_1oi5p"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="17_qf7m4"]
 [ext_resource type="Texture2D" uid="uid://sedxdqthglgf" path="res://assets/Fondo_Surrealismo.png" id="18_j11ql"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_oy0r0"]
+script/source = "using Godot;
+using System;
+
+public partial class Pausa_VN0 : Node2D{
+	private PauseMenu_VN0 pauseMenu;
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready(){
+		pauseMenu = GetParent().GetNode<PauseMenu_VN0>(\"PauseMenu\");
+		
+		ProcessMode = Node.ProcessModeEnum.Always;	
+		
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta){
+	
+		if(Input.IsActionJustPressed(\"Escape\")){
+			if (pauseMenu.Visible){
+				pauseMenu.HideMenu();
+			}else{
+				pauseMenu.ShowMenu();
+			}
+		}
+	}
+}
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfddq"]
 atlas = ExtResource("15_57b1b")
@@ -203,10 +231,10 @@ size = Vector2(72, 39)
 [node name="recogerLlave" type="Node2D"]
 
 [node name="pausa" type="Node2D" parent="."]
-script = ExtResource("1_nm637")
+script = SubResource("CSharpScript_oy0r0")
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-script = ExtResource("2_dpeg1")
+script = ExtResource("1_c721d")
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu"]
 offset_left = -5.0

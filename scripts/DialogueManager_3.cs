@@ -2,17 +2,7 @@ using Godot;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public partial class DialogueManager_3 : Node {
-	[Export] public Label DialogueLabel;
-	[Export] public Label NameLabel;
-	[Export] public Sprite2D CharacterLeft;
-	[Export] public Sprite2D CharacterRight;
-	[Export] public TextureRect TheBackground;
-
-	private int currentIndex = 0;
-	private bool isTyping = false;
-	private string currentText = "";
-
+public partial class DialogueManager_3 : DialogueManagerBase {
 	private List<DialogueLine> dialogueLines = new List<DialogueLine> {
 		new DialogueLine("Kenneth", "Good job, Iris.", true, false, "res://assets/VN/default_spirit.png", "res://assets/VN/defaultMC.png"),
 		new DialogueLine("Kenneth", "If you keep it up, no one could stop you. Not even the Devil himself!", true, false, "res://assets/VN/surprised_spirit.png", "res://assets/VN/happyMC.png"),
@@ -23,21 +13,7 @@ public partial class DialogueManager_3 : Node {
 		new DialogueLine("Iris", "Let’s get rid of them, Kenneth!", false, true, "res://assets/VN/surprised_spirit.png", "res://assets/VN/motivatedMC.png"),
 	};
 
-	public override void _Ready() {
-		ShowNextDialogue();
-	}
-
-	public override void _Input(InputEvent @event) {
-		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed) {
-			if (isTyping) {
-				SkipTyping();
-			} else {
-				ShowNextDialogue();
-			}
-		}
-	}
-
-	private async void ShowNextDialogue() {
+	protected override async void ShowNextDialogue() {
 		if (currentIndex >= dialogueLines.Count) {
 			GD.Print("Fin del diálogo 0.");
 			GetTree().ChangeSceneToFile("res://escenas/mundo_3.tscn");
@@ -88,29 +64,5 @@ public partial class DialogueManager_3 : Node {
 		DialogueLabel.Text = currentText;
 		isTyping = false;
 		currentIndex++;
-	}
-
-	private void SkipTyping() {
-		DialogueLabel.Text = currentText;
-		isTyping = false;
-	}
-
-	private class DialogueLine {
-		public string Speaker;
-		public string Text;
-		public bool LeftActive;
-		public bool RightActive;
-		public string LeftSpritePath;
-		public string RightSpritePath;
-
-		public DialogueLine(string speaker, string text, bool leftActive, bool rightActive,
-							string leftSpritePath = null, string rightSpritePath = null) {
-			Speaker = speaker;
-			Text = text;
-			LeftActive = leftActive;
-			RightActive = rightActive;
-			LeftSpritePath = leftSpritePath;
-			RightSpritePath = rightSpritePath;
-		}
 	}
 }

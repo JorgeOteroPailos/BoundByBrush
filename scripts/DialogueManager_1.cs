@@ -2,17 +2,7 @@ using Godot;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public partial class DialogueManager_1 : Node {
-	[Export] public Label DialogueLabel;
-	[Export] public Label NameLabel;
-	[Export] public Sprite2D CharacterLeft;
-	[Export] public Sprite2D CharacterRight;
-	[Export] public TextureRect TheBackground;
-
-	private int currentIndex = 0;
-	private bool isTyping = false;
-	private string currentText = "";
-
+public partial class DialogueManager_1 : DialogueManagerBase {
 	private List<DialogueLine> dialogueLines = new List<DialogueLine> {
 
 		new DialogueLine("Iris", "Where am I?", false, true, null, "res://assets/VN/sadMC.png"),
@@ -40,21 +30,8 @@ public partial class DialogueManager_1 : Node {
 		new DialogueLine("Iris", "Bring it on!", false, true, null, "res://assets/VN/angryMC.png"),
 	};
 
-	public override void _Ready() {
-		ShowNextDialogue();
-	}
 
-	public override void _Input(InputEvent @event) {
-		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed) {
-			if (isTyping) {
-				SkipTyping();
-			} else {
-				ShowNextDialogue();
-			}
-		}
-	}
-
-	private async void ShowNextDialogue() {
+	protected override async void ShowNextDialogue() {
 		if (currentIndex >= dialogueLines.Count) {
 			GD.Print("Fin del diálogo 1.");
 			GetTree().ChangeSceneToFile("res://escenas/mundo.tscn");
@@ -94,29 +71,5 @@ public partial class DialogueManager_1 : Node {
 		DialogueLabel.Text = currentText;
 		isTyping = false;
 		currentIndex++;
-	}
-
-	private void SkipTyping() {
-		DialogueLabel.Text = currentText;
-		isTyping = false;
-	}
-
-	private class DialogueLine {
-		public string Speaker;
-		public string Text;
-		public bool LeftActive;
-		public bool RightActive;
-		public string LeftSpritePath;
-		public string RightSpritePath;
-
-		public DialogueLine(string speaker, string text, bool leftActive, bool rightActive,
-							string leftSpritePath = null, string rightSpritePath = null) {
-			Speaker = speaker;
-			Text = text;
-			LeftActive = leftActive;
-			RightActive = rightActive;
-			LeftSpritePath = leftSpritePath;
-			RightSpritePath = rightSpritePath;
-		}
 	}
 }

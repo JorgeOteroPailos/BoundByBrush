@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://boc3iclfpbb0k" path="res://scripts/DialogueManager_6.cs" id="1_wlxr0"]
 [ext_resource type="Texture2D" uid="uid://2e6esg6dwenx" path="res://assets/Fondo_Final.png" id="2_ulm0x"]
-[ext_resource type="Script" uid="uid://bu4bbwnblyaeo" path="res://scripts/PauseMenu_VN0.cs" id="3_tesv4"]
+[ext_resource type="Script" uid="uid://d3xwrwbi4fc5q" path="res://scripts/PauseMenu.cs" id="3_f75u2"]
 [ext_resource type="Texture2D" uid="uid://crqll8tl0f8ab" path="res://assets/Play_Button.png" id="4_1n86j"]
 [ext_resource type="Texture2D" uid="uid://dlq0r6bu20ihq" path="res://assets/Options_Button.png" id="5_2025u"]
 [ext_resource type="Texture2D" uid="uid://cv273f2aq8210" path="res://assets/Menu_Button.png" id="6_w48be"]
@@ -13,7 +13,35 @@
 [ext_resource type="Texture2D" uid="uid://cyprggwfwmouw" path="res://assets/Mute_Button.png" id="11_7ohqf"]
 [ext_resource type="Texture2D" uid="uid://csiapxdaad5wo" path="res://assets/Options_2_Button.png" id="12_4t7f1"]
 [ext_resource type="Texture2D" uid="uid://fmheomor8un0" path="res://assets/Achivements_Button.png" id="13_okn38"]
-[ext_resource type="Script" uid="uid://dgdy4f31bel2c" path="res://scripts/Pausa_VN0.cs" id="14_idf0d"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_oy0r0"]
+script/source = "using Godot;
+using System;
+
+public partial class Pausa_VN0 : Node2D{
+	private PauseMenu_VN0 pauseMenu;
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready(){
+		pauseMenu = GetParent().GetNode<PauseMenu_VN0>(\"PauseMenu\");
+		
+		ProcessMode = Node.ProcessModeEnum.Always;	
+		
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta){
+	
+		if(Input.IsActionJustPressed(\"Escape\")){
+			if (pauseMenu.Visible){
+				pauseMenu.HideMenu();
+			}else{
+				pauseMenu.ShowMenu();
+			}
+		}
+	}
+}
+"
 
 [node name="VisualNovel6" type="Node2D" node_paths=PackedStringArray("DialogueLabel", "NameLabel", "CharacterLeft", "CharacterRight", "TheBackground")]
 script = ExtResource("1_wlxr0")
@@ -73,7 +101,7 @@ texture = ExtResource("2_ulm0x")
 expand_mode = 3
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-script = ExtResource("3_tesv4")
+script = ExtResource("3_f75u2")
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu"]
 z_index = 1000
@@ -172,4 +200,4 @@ flat = true
 
 [node name="pausa" type="Node2D" parent="."]
 z_index = 1000
-script = ExtResource("14_idf0d")
+script = SubResource("CSharpScript_oy0r0")
