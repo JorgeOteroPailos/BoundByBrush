@@ -6,10 +6,10 @@ public partial class Despertar : Node2D{
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready(){
-		personaje=GetNode<AnimatedSprite2D>("prota");
+		personaje=GetNode<AnimatedSprite2D>("personaje");
 		personaje.Play("despertar");
 		
-		personaje.AnimationFinished += () => GetTree().ChangeSceneToFile("res://escenas/visual_novel_1.tscn");
+		personaje.AnimationFinished += () => GetTree().ChangeSceneToFile("res://escenas/visual_novel.tscn");
 		
 	}
 

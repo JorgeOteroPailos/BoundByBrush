@@ -84,7 +84,9 @@ public partial class Inicio : Node
 	private void OnBotonPaintPressed()
 	{
 		// Cambiar escena a novelaVisual0
-		GetTree().ChangeSceneToFile("res://escenas/visual_novel_0.tscn");
+		Estado.nivel=1;
+		Estado.indiceNovela=0;
+		GetTree().ChangeSceneToFile("res://escenas/visual_novel.tscn");
 			return;
 		
 	}

@@ -1,23 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://bkbch4861ng30"]
+[gd_scene load_steps=31 format=3 uid="uid://b8kkgsfhfvlba"]
 
-[ext_resource type="Script" uid="uid://dgdy4f31bel2c" path="res://scripts/Pausa_VN0.cs" id="1_3culn"]
-[ext_resource type="Script" uid="uid://bu4bbwnblyaeo" path="res://scripts/PauseMenu_VN0.cs" id="2_8e560"]
-[ext_resource type="Texture2D" uid="uid://crqll8tl0f8ab" path="res://assets/Play_Button.png" id="3_681nf"]
-[ext_resource type="Texture2D" uid="uid://dlq0r6bu20ihq" path="res://assets/Options_Button.png" id="4_egsng"]
-[ext_resource type="Texture2D" uid="uid://cv273f2aq8210" path="res://assets/Menu_Button.png" id="5_wuxiq"]
-[ext_resource type="Texture2D" uid="uid://5tsacpaxgdxh" path="res://assets/Exit_Button.png" id="6_vu4vs"]
-[ext_resource type="Texture2D" uid="uid://byf35wk4dh8f" path="res://assets/High_Volume_Button.png" id="7_o42mt"]
-[ext_resource type="Texture2D" uid="uid://cly4ircj4jfo4" path="res://assets/Medium_Volume_Button.png" id="8_qx3v3"]
-[ext_resource type="Texture2D" uid="uid://bmqa5x76tu1ng" path="res://assets/Low_Volume_Button.png" id="9_ykp6g"]
-[ext_resource type="Texture2D" uid="uid://cyprggwfwmouw" path="res://assets/Mute_Button.png" id="10_k8r3w"]
-[ext_resource type="Texture2D" uid="uid://csiapxdaad5wo" path="res://assets/Options_2_Button.png" id="11_kv6i2"]
-[ext_resource type="Texture2D" uid="uid://fmheomor8un0" path="res://assets/Achivements_Button.png" id="12_5y03y"]
 [ext_resource type="Texture2D" uid="uid://bwpuei0vjcyu5" path="res://assets/Candado_Blanco.png" id="13_cv30o"]
 [ext_resource type="Script" uid="uid://c3jruj5ncxycv" path="res://scripts/CharacterBody2d_4.cs" id="14_3culn"]
 [ext_resource type="Texture2D" uid="uid://bkygheei2k5cb" path="res://assets/prota.png" id="15_npa5d"]
 [ext_resource type="Texture2D" uid="uid://bn65x1whbu8am" path="res://assets/Llave_Blanca_Animacion_Centrada.png" id="16_vc0jv"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="17_1fsj5"]
-[ext_resource type="Texture2D" uid="uid://dol16inc1fh8y" path="res://assets/Fondo_Cubismo.png" id="18_go4g1"]
+[ext_resource type="Texture2D" uid="uid://b8pa7ld2ksnks" path="res://assets/fondos/Fondo_Cubismo.png" id="18_go4g1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfddq"]
 atlas = ExtResource("15_npa5d")
@@ -201,103 +189,6 @@ animations = [{
 size = Vector2(72, 39)
 
 [node name="recogerLlave" type="Node2D"]
-
-[node name="pausa" type="Node2D" parent="."]
-script = ExtResource("1_3culn")
-
-[node name="PauseMenu" type="CanvasLayer" parent="."]
-script = ExtResource("2_8e560")
-
-[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 35.0
-offset_bottom = 35.0
-scale = Vector2(29.0885, 16.6035)
-color = Color(0, 0, 0, 0.666667)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 421.0
-offset_top = 139.0
-offset_right = 595.0
-offset_bottom = 387.0
-scale = Vector2(1.77151, 1.65008)
-alignment = 1
-
-[node name="Continuar" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("3_681nf")
-icon_alignment = 1
-
-[node name="Options" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("4_egsng")
-
-[node name="Menu" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("5_wuxiq")
-
-[node name="Salir" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("6_vu4vs")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 603.0
-offset_top = 186.0
-offset_right = 770.0
-offset_bottom = 452.0
-scale = Vector2(1.00973, 0.993787)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="muchoSonido" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("7_o42mt")
-flat = true
-
-[node name="sonidoParcial" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("8_qx3v3")
-flat = true
-
-[node name="pocoSonido" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("9_ykp6g")
-flat = true
-
-[node name="pantalla" type="OptionButton" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 668.0
-offset_top = 186.0
-offset_right = 835.0
-offset_bottom = 560.0
-
-[node name="muted" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("10_k8r3w")
-flat = true
-
-[node name="ajustes" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("11_kv6i2")
-flat = true
-
-[node name="logros" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("12_5y03y")
-flat = true
 
 [node name="Candado" type="Sprite2D" parent="."]
 z_index = 2

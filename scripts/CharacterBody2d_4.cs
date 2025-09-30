@@ -57,6 +57,8 @@ public partial class CharacterBody2d_4 : CharacterBody2D
 	
 	private void abrirPuerta(){
 		GetParent().GetNode<StaticBody2D>("StaticBody2D").GetNode<Sprite2D>("Puerta").Texture=GD.Load<Texture2D>("res://assets/Puerta_abierta.png");
-		GetTree().ChangeSceneToFile("res://escenas/visual_novel_5.tscn");
+		Estado.nivel++;
+		GD.Print("Nivel vale "+Estado.nivel);
+		GetTree().ChangeSceneToFile("res://escenas/visual_novel.tscn");
 	}
 }

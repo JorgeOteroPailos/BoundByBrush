@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://j4th2wdx8g51"]
+[gd_scene load_steps=3 format=3 uid="uid://brw41ms5j7r0v"]
 
-[ext_resource type="Script" uid="uid://chkqlppeilatt" path="res://scripts/DialogueManager.cs" id="1_3fgb7"]
-[ext_resource type="Texture2D" uid="uid://x667dwlw8byw" path="res://assets/fondos/Fondo_Noche_Estrellada.png" id="2_3fgb7"]
+[ext_resource type="Script" uid="uid://chkqlppeilatt" path="res://scripts/DialogueManager.cs" id="1_igwu6"]
+[ext_resource type="Texture2D" uid="uid://dd2parvc0ltiy" path="res://assets/firebg.png" id="2_l4y27"]
 
-[node name="visual_novel" type="Node2D"]
-script = ExtResource("1_3fgb7")
+[node name="visual_novel" type="Node2D" node_paths=PackedStringArray("DialogueLabel", "NameLabel", "CharacterLeft", "CharacterRight", "TheBackground")]
+script = ExtResource("1_igwu6")
+DialogueLabel = NodePath("UI/textBox/dialogue_label")
+NameLabel = NodePath("UI/namePanel/name_label")
+CharacterLeft = NodePath("character_left")
+CharacterRight = NodePath("character_right")
+TheBackground = NodePath("TheBackground")
 
 [node name="character_left" type="Sprite2D" parent="."]
 position = Vector2(301, 265)
@@ -51,5 +56,5 @@ offset_left = -6.0
 offset_top = -5.0
 offset_right = 1157.0
 offset_bottom = 654.0
-texture = ExtResource("2_3fgb7")
+texture = ExtResource("2_l4y27")
 expand_mode = 3

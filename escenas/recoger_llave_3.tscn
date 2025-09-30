@@ -1,51 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://dntuu0qua47sy"]
+[gd_scene load_steps=31 format=3 uid="uid://bx5w8f47i766y"]
 
-[ext_resource type="Script" uid="uid://d3xwrwbi4fc5q" path="res://scripts/PauseMenu.cs" id="1_c721d"]
-[ext_resource type="Texture2D" uid="uid://crqll8tl0f8ab" path="res://assets/Play_Button.png" id="3_e5bre"]
-[ext_resource type="Texture2D" uid="uid://dlq0r6bu20ihq" path="res://assets/Options_Button.png" id="4_vakna"]
-[ext_resource type="Texture2D" uid="uid://cv273f2aq8210" path="res://assets/Menu_Button.png" id="5_jhklk"]
-[ext_resource type="Texture2D" uid="uid://5tsacpaxgdxh" path="res://assets/Exit_Button.png" id="6_rqkgm"]
-[ext_resource type="Texture2D" uid="uid://byf35wk4dh8f" path="res://assets/High_Volume_Button.png" id="7_8wxgh"]
-[ext_resource type="Texture2D" uid="uid://cly4ircj4jfo4" path="res://assets/Medium_Volume_Button.png" id="8_lr0pd"]
-[ext_resource type="Texture2D" uid="uid://bmqa5x76tu1ng" path="res://assets/Low_Volume_Button.png" id="9_beooo"]
-[ext_resource type="Texture2D" uid="uid://cyprggwfwmouw" path="res://assets/Mute_Button.png" id="10_fqmhi"]
-[ext_resource type="Texture2D" uid="uid://csiapxdaad5wo" path="res://assets/Options_2_Button.png" id="11_rigv0"]
-[ext_resource type="Texture2D" uid="uid://fmheomor8un0" path="res://assets/Achivements_Button.png" id="12_gpytn"]
+[ext_resource type="Script" uid="uid://c3jruj5ncxycv" path="res://scripts/CharacterBody2d_4.cs" id="2_tgl3b"]
 [ext_resource type="Texture2D" uid="uid://djhmqrmm16jb6" path="res://assets/Candado_Naranja_Morado.png" id="13_oylth"]
-[ext_resource type="Script" uid="uid://yy6vmlipgmjn" path="res://scripts/CharacterBody2d_3.cs" id="14_nm637"]
 [ext_resource type="Texture2D" uid="uid://bkygheei2k5cb" path="res://assets/prota.png" id="15_57b1b"]
 [ext_resource type="Texture2D" uid="uid://rgr1x4h2wuyc" path="res://assets/Llave_Naranja_Morada_Animacion_Centrada.png" id="16_1oi5p"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="17_qf7m4"]
-[ext_resource type="Texture2D" uid="uid://sedxdqthglgf" path="res://assets/Fondo_Surrealismo.png" id="18_j11ql"]
-
-[sub_resource type="CSharpScript" id="CSharpScript_oy0r0"]
-script/source = "using Godot;
-using System;
-
-public partial class Pausa_VN0 : Node2D{
-	private PauseMenu_VN0 pauseMenu;
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready(){
-		pauseMenu = GetParent().GetNode<PauseMenu_VN0>(\"PauseMenu\");
-		
-		ProcessMode = Node.ProcessModeEnum.Always;	
-		
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta){
-	
-		if(Input.IsActionJustPressed(\"Escape\")){
-			if (pauseMenu.Visible){
-				pauseMenu.HideMenu();
-			}else{
-				pauseMenu.ShowMenu();
-			}
-		}
-	}
-}
-"
+[ext_resource type="Texture2D" uid="uid://8to5rjnj0txi" path="res://assets/fondos/Fondo_Surrealismo.png" id="18_j11ql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfddq"]
 atlas = ExtResource("15_57b1b")
@@ -230,103 +190,6 @@ size = Vector2(72, 39)
 
 [node name="recogerLlave" type="Node2D"]
 
-[node name="pausa" type="Node2D" parent="."]
-script = SubResource("CSharpScript_oy0r0")
-
-[node name="PauseMenu" type="CanvasLayer" parent="."]
-script = ExtResource("1_c721d")
-
-[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 35.0
-offset_bottom = 35.0
-scale = Vector2(29.0885, 16.6035)
-color = Color(0, 0, 0, 0.666667)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 421.0
-offset_top = 139.0
-offset_right = 595.0
-offset_bottom = 387.0
-scale = Vector2(1.77151, 1.65008)
-alignment = 1
-
-[node name="Continuar" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("3_e5bre")
-icon_alignment = 1
-
-[node name="Options" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("4_vakna")
-
-[node name="Menu" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("5_jhklk")
-
-[node name="Salir" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("6_rqkgm")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 603.0
-offset_top = 186.0
-offset_right = 770.0
-offset_bottom = 452.0
-scale = Vector2(1.00973, 0.993787)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="muchoSonido" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("7_8wxgh")
-flat = true
-
-[node name="sonidoParcial" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("8_lr0pd")
-flat = true
-
-[node name="pocoSonido" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("9_beooo")
-flat = true
-
-[node name="pantalla" type="OptionButton" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 668.0
-offset_top = 186.0
-offset_right = 835.0
-offset_bottom = 560.0
-
-[node name="muted" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("10_fqmhi")
-flat = true
-
-[node name="ajustes" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("11_rigv0")
-flat = true
-
-[node name="logros" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("12_gpytn")
-flat = true
-
 [node name="Candado" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(574, 51)
@@ -335,7 +198,7 @@ texture = ExtResource("13_oylth")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 3
 position = Vector2(573, 155)
-script = ExtResource("14_nm637")
+script = ExtResource("2_tgl3b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1, -2)

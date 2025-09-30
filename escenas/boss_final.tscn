@@ -1,12 +1,12 @@
-[gd_scene load_steps=152 format=3 uid="uid://b354lkoe86mpe"]
+[gd_scene load_steps=152 format=3 uid="uid://bik04srb0kqgn"]
 
-[ext_resource type="Texture2D" uid="uid://bfreaqhw4kcfq" path="res://assets/Demon_Black_Animation.png" id="1_utyir"]
-[ext_resource type="Texture2D" uid="uid://ddi1d342gdwfx" path="res://assets/demonio_blue.png" id="2_2kvi4"]
-[ext_resource type="Texture2D" uid="uid://b7vsp5uritrfo" path="res://assets/demonio_green.png" id="3_vbovm"]
-[ext_resource type="Texture2D" uid="uid://d4jwblw7vp3te" path="res://assets/demonio_orange.png" id="4_thvec"]
-[ext_resource type="Texture2D" uid="uid://bqbviywcgkyg1" path="res://assets/demonio_purple.png" id="5_yjynl"]
-[ext_resource type="Texture2D" uid="uid://og2psqa6ws18" path="res://assets/demonio_red.png" id="6_fluq4"]
-[ext_resource type="Texture2D" uid="uid://cjl86xo1pp0ur" path="res://assets/demonio_yellow.png" id="7_6svnn"]
+[ext_resource type="Texture2D" uid="uid://coqww8bv00u7" path="res://assets/Demon_Black_Animation.png" id="1_utyir"]
+[ext_resource type="Texture2D" uid="uid://be38sv68p4io4" path="res://assets/demonio_blue.png" id="2_2kvi4"]
+[ext_resource type="Texture2D" uid="uid://dk8tqog48sx0q" path="res://assets/demonio_green.png" id="3_vbovm"]
+[ext_resource type="Texture2D" uid="uid://chhy3jirwtg7c" path="res://assets/demonio_orange.png" id="4_thvec"]
+[ext_resource type="Texture2D" uid="uid://btap46nu3w4ke" path="res://assets/demonio_purple.png" id="5_yjynl"]
+[ext_resource type="Texture2D" uid="uid://davg6a8wbwt4j" path="res://assets/demonio_red.png" id="6_fluq4"]
+[ext_resource type="Texture2D" uid="uid://bvrqu3n2n1ai" path="res://assets/demonio_yellow.png" id="7_6svnn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qkp2p"]
 atlas = ExtResource("1_utyir")

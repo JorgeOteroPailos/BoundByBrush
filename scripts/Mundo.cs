@@ -13,8 +13,8 @@ public partial class Mundo : MundoBase
 		
 		nEnemigos=12;
 		
-		player = GetNode<Player>("Node2D");
-		player.world="res:/escenas/mundo.tscn";
+		player = GetNode<Player>("personaje");
+		player.world="res://escenas/mundo.tscn";
 		
 		Node Enemigos = GetNode("Enemigos");
 
@@ -33,9 +33,7 @@ public partial class Mundo : MundoBase
 			}
 		}
 		
-		AnimatedSprite2D llamita = GetNode<AnimatedSprite2D>("llamita");
-		llamita.Play("default");
-		
+		//AnimatedSprite2D llamita = GetNode<AnimatedSprite2D>("llamita");
+		//llamita.Play("default");	
 	}
-	
 }

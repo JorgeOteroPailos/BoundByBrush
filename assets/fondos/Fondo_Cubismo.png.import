@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbb3s3856iy3n"
-path="res://.godot/imported/Fondo_Inicio.png-9792f16c626031e8c191b9af0b141623.ctex"
+uid="uid://b8pa7ld2ksnks"
+path="res://.godot/imported/Fondo_Cubismo.png-2c5e66e552968b5a1f56a384f48027be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Fondo_Inicio.png"
-dest_files=["res://.godot/imported/Fondo_Inicio.png-9792f16c626031e8c191b9af0b141623.ctex"]
+source_file="res://assets/fondos/Fondo_Cubismo.png"
+dest_files=["res://.godot/imported/Fondo_Cubismo.png-2c5e66e552968b5a1f56a384f48027be.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

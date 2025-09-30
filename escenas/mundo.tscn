@@ -1,105 +1,13 @@
-[gd_scene load_steps=35 format=3 uid="uid://c87ii7oaqqdmx"]
+[gd_scene load_steps=10 format=3 uid="uid://c87ii7oaqqdmx"]
 
 [ext_resource type="Script" uid="uid://c4f2q54ox6mn3" path="res://scripts/Mundo.cs" id="1_xq8jy"]
 [ext_resource type="PackedScene" uid="uid://dtvvpjxan4t1s" path="res://escenas/circulo.tscn" id="2_6juyn"]
-[ext_resource type="Texture2D" uid="uid://d7q06xhm0evs" path="res://assets/Fondo_Noche_Estrellada.png" id="3_rn4qs"]
+[ext_resource type="Texture2D" uid="uid://x667dwlw8byw" path="res://assets/fondos/Fondo_Noche_Estrellada.png" id="3_txhqv"]
 [ext_resource type="PackedScene" uid="uid://c60o3w37ue45k" path="res://escenas/personaje.tscn" id="4_x5o5w"]
-[ext_resource type="Script" uid="uid://ctj347id36qo1" path="res://scripts/Pausa.cs" id="5_mwgmh"]
-[ext_resource type="Texture2D" uid="uid://cqunxvulykp0l" path="res://assets/Corazones_UI.png" id="6_m8y22"]
-[ext_resource type="Script" uid="uid://d3xwrwbi4fc5q" path="res://scripts/PauseMenu.cs" id="7_6vh84"]
-[ext_resource type="Texture2D" uid="uid://crqll8tl0f8ab" path="res://assets/Play_Button.png" id="8_gs36m"]
-[ext_resource type="Texture2D" uid="uid://dlq0r6bu20ihq" path="res://assets/Options_Button.png" id="9_sh8ar"]
-[ext_resource type="Texture2D" uid="uid://cv273f2aq8210" path="res://assets/Menu_Button.png" id="10_q3w73"]
-[ext_resource type="Texture2D" uid="uid://5tsacpaxgdxh" path="res://assets/Exit_Button.png" id="11_maaya"]
-[ext_resource type="Texture2D" uid="uid://byf35wk4dh8f" path="res://assets/High_Volume_Button.png" id="12_gyqeu"]
-[ext_resource type="Texture2D" uid="uid://cly4ircj4jfo4" path="res://assets/Medium_Volume_Button.png" id="13_l83ds"]
-[ext_resource type="Texture2D" uid="uid://bmqa5x76tu1ng" path="res://assets/Low_Volume_Button.png" id="14_qcqgt"]
-[ext_resource type="Texture2D" uid="uid://cyprggwfwmouw" path="res://assets/Mute_Button.png" id="15_gteqy"]
-[ext_resource type="Texture2D" uid="uid://csiapxdaad5wo" path="res://assets/Options_2_Button.png" id="16_ttt65"]
-[ext_resource type="Texture2D" uid="uid://fmheomor8un0" path="res://assets/Achivements_Button.png" id="17_riju2"]
 [ext_resource type="AudioStream" uid="uid://mlcxrwrqsxum" path="res://music/Unholy_Knight.mp3" id="18_2gdlm"]
 [ext_resource type="Script" uid="uid://dl4q7q2o67yb6" path="res://scripts/Musica.cs" id="19_4d33t"]
-[ext_resource type="Texture2D" uid="uid://7so0u5sdra4t" path="res://assets/Wisp.png" id="20_gntx8"]
 [ext_resource type="Texture2D" uid="uid://dlv5p0hgdf6rs" path="res://assets/Candado_Rojo.png" id="21_x1ruw"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="22_8l5ts"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sxlx8"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wnkqi"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i7hqc"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_83snu"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bve4g"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4fig"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_muygd"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1gce"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nf3ij"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(256, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3apa"]
-atlas = ExtResource("20_gntx8")
-region = Rect2(288, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_a2s0j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sxlx8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wnkqi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i7hqc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_83snu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bve4g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t4fig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_muygd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y1gce")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nf3ij")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f3apa")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnkqi"]
 size = Vector2(72, 39)
@@ -110,118 +18,11 @@ CirculoScene = ExtResource("2_6juyn")
 
 [node name="fondo" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-texture = ExtResource("3_rn4qs")
+texture = ExtResource("3_txhqv")
 
-[node name="Node2D" parent="." instance=ExtResource("4_x5o5w")]
+[node name="personaje" parent="." instance=ExtResource("4_x5o5w")]
 z_index = 2
 position = Vector2(572, 343)
-
-[node name="pausa" type="Node2D" parent="."]
-script = ExtResource("5_mwgmh")
-
-[node name="CorazonesUi" type="Sprite2D" parent="."]
-position = Vector2(-215, 310)
-scale = Vector2(0.985231, 1)
-texture = ExtResource("6_m8y22")
-
-[node name="PauseMenu" type="CanvasLayer" parent="."]
-script = ExtResource("7_6vh84")
-
-[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 35.0
-offset_bottom = 35.0
-scale = Vector2(29.0885, 16.6035)
-color = Color(0, 0, 0, 0.666667)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 421.0
-offset_top = 139.0
-offset_right = 595.0
-offset_bottom = 387.0
-scale = Vector2(1.77151, 1.65008)
-alignment = 1
-
-[node name="Continuar" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("8_gs36m")
-icon_alignment = 1
-
-[node name="Options" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("9_sh8ar")
-
-[node name="Menu" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("10_q3w73")
-
-[node name="Salir" type="Button" parent="PauseMenu/VBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("11_maaya")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 603.0
-offset_top = 186.0
-offset_right = 770.0
-offset_bottom = 452.0
-scale = Vector2(1.00973, 0.993787)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="muchoSonido" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("12_gyqeu")
-flat = true
-
-[node name="sonidoParcial" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("13_l83ds")
-flat = true
-
-[node name="pocoSonido" type="Button" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("14_qcqgt")
-flat = true
-
-[node name="pantalla" type="OptionButton" parent="PauseMenu/VBoxContainer2"]
-layout_mode = 2
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="PauseMenu"]
-offset_left = 668.0
-offset_top = 186.0
-offset_right = 835.0
-offset_bottom = 560.0
-
-[node name="muted" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("15_gteqy")
-flat = true
-
-[node name="ajustes" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("16_ttt65")
-flat = true
-
-[node name="logros" type="Button" parent="PauseMenu/VBoxContainer3"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("17_riju2")
-flat = true
-
-[node name="Musica" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_2gdlm")
-autoplay = true
-script = ExtResource("19_4d33t")
 
 [node name="Enemigos" type="CanvasLayer" parent="."]
 layer = 0
@@ -274,13 +75,12 @@ position = Vector2(791, 472)
 z_index = 2
 position = Vector2(790, 209)
 
-[node name="llamita" type="AnimatedSprite2D" parent="."]
-position = Vector2(652, 30)
-sprite_frames = SubResource("SpriteFrames_a2s0j")
-frame = 4
-frame_progress = 0.717068
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_2gdlm")
+autoplay = true
+script = ExtResource("19_4d33t")
 
-[node name="CandadoRojo" type="Sprite2D" parent="."]
+[node name="candado" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(575, 55)
 texture = ExtResource("21_x1ruw")
