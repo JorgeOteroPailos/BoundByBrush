@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27c6cyp6ogap"
-path="res://.godot/imported/Fondo_Rojo_Negro.png-cddfc30366dfc8fd440bc12f4754bcd1.ctex"
+uid="uid://bx17jb2oxverq"
+path="res://.godot/imported/Llave_Roja_Animacion_Centrada.png-3e02df498c8efbf10a2259cc1ef01f70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Fondo_Rojo_Negro.png"
-dest_files=["res://.godot/imported/Fondo_Rojo_Negro.png-cddfc30366dfc8fd440bc12f4754bcd1.ctex"]
+source_file="res://assets/llaves/Llave_Roja_Animacion_Centrada.png"
+dest_files=["res://.godot/imported/Llave_Roja_Animacion_Centrada.png-3e02df498c8efbf10a2259cc1ef01f70.ctex"]
 
 [params]
 

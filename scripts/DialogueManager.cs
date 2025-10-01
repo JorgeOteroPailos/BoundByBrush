@@ -14,7 +14,8 @@ public partial class DialogueManager : Node
 	private static int[] lineasPorEscena={11, 23, 6, 7, 6, 13, 13};
 	//linea en la que cambiamos de fondo en medio del diálogo. Si no lo hacemos, -1
 	private static int[] cambioDeFondo={11, -1, 11, 11, 11, -1, 9};
-	private static string[] fondoACambiar={"Fondo_Noche_Estrellada.png", null, "Fondo_Noche_Estrellada.png", "Fondo_Noche_Estrellada.png", "Fondo_Noche_Estrellada.png", null, "forestbg.png"};
+	private static string[] fondoACambiar={"noche_estrellada.png", null, "noche_estrellada.png", "noche_estrellada.png", "noche_estrellada.png", null, "bosque.png"};
+	private static string[] fondoInicial={"fuego.png", "noche_estrellada.png", "neoplasticismo.png", "surrealismo.png", "cubismo.png", "final.png", "bosque.png"};
 	
 	private static string[] siguienteEscena={"despertar", "mundo", "mundo_2", "mundo_3", "mundo_4", "mundo_5", "credits"};
 	
@@ -33,6 +34,9 @@ public partial class DialogueManager : Node
 	}
 
 	public override void _Ready() {
+		indiceLinea=0;
+		var newBackground = ResourceLoader.Load<Texture2D>("res://assets/fondos/"+fondoInicial[Estado.indiceNovela]);
+		TheBackground.Texture = newBackground;
 		ShowNextDialogue();
 	}
 	
@@ -46,7 +50,8 @@ public partial class DialogueManager : Node
 		if (indiceLinea >= lineasPorEscena[Estado.indiceNovela]) {
 			GD.Print("Fin del diálogo "+Estado.indiceNovela);
 			GetTree().ChangeSceneToFile("res://escenas/"+siguienteEscena[Estado.indiceNovela]+".tscn");
-			dialogueLines.RemoveRange(0, lineasPorEscena[Estado.indiceNovela]);
+			limpiarListaDialogos();
+			GD.Print("Eliminando "+lineasPorEscena[Estado.indiceNovela]+" lineas, quedan "+dialogueLines.Count);
 			Estado.indiceNovela++;
 			return;
 		}
@@ -62,7 +67,8 @@ public partial class DialogueManager : Node
 			}
 		}
 		
-		var linea = dialogueLines[indiceLinea];
+		var linea = cargarLinea();
+		GD.Print("Sacando la línea "+indiceLinea);
 		
 		if(NameLabel==null){
 			GD.Print("nameLabel es null");
@@ -101,6 +107,14 @@ public partial class DialogueManager : Node
 		indiceLinea++;
 	}
 	
+	private void limpiarListaDialogos(){
+		dialogueLines.RemoveRange(0, lineasPorEscena[Estado.indiceNovela]);
+	}
+	
+	private DialogueLine cargarLinea(){
+		return dialogueLines[indiceLinea];
+	}
+	
 	protected class DialogueLine {
 		public string Speaker;
 		public string Text;
@@ -120,7 +134,7 @@ public partial class DialogueManager : Node
 		}
 	}
 		
-	private List<DialogueLine> dialogueLines = new List<DialogueLine> {
+	private static List<DialogueLine> dialogueLines = new List<DialogueLine> {
 		new DialogueLine(null, "They say the Devil bows to no one. He rules with pride and defiance, and he needs neither permission nor praise.", false, false, null, null),
 		new DialogueLine(null, "For ages, nothing stirred him: no prayer, no curse, no soul worth a second glance.", false, false, null, null),
 		new DialogueLine(null, "But eventually, his boredom and curiosity drew him to a mortal unlike any other. She came with no crown, no army, just a simple brush. A painter whose strokes flayed deception, leaving only the raw, bleeding truth beneath.", false, false, null, null),

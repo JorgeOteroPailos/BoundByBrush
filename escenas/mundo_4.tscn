@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://ca3fu1e682dny" path="res://scripts/Mundo4.cs" id="1_we25a"]
 [ext_resource type="Script" uid="uid://dl4q7q2o67yb6" path="res://scripts/Musica.cs" id="2_we25a"]
 [ext_resource type="PackedScene" uid="uid://c60o3w37ue45k" path="res://escenas/personaje.tscn" id="3_h6caf"]
-[ext_resource type="Texture2D" uid="uid://b8pa7ld2ksnks" path="res://assets/fondos/Fondo_Cubismo.png" id="8_ewyv6"]
+[ext_resource type="Texture2D" uid="uid://cari0o7dc5ij3" path="res://assets/fondos/cubismo.png" id="8_ewyv6"]
 [ext_resource type="PackedScene" uid="uid://dtvvpjxan4t1s" path="res://escenas/circulo.tscn" id="16_lg3dy"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="17_d7yc5"]
-[ext_resource type="Texture2D" uid="uid://bwpuei0vjcyu5" path="res://assets/Candado_Blanco.png" id="18_47cx0"]
+[ext_resource type="Texture2D" uid="uid://tuvgadgpi4b0" path="res://assets/candados/candado_blanco.png" id="18_47cx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6y0b"]
 size = Vector2(72, 39)

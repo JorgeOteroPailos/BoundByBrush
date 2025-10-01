@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://brw41ms5j7r0v"]
 
 [ext_resource type="Script" uid="uid://chkqlppeilatt" path="res://scripts/DialogueManager.cs" id="1_igwu6"]
-[ext_resource type="Texture2D" uid="uid://dd2parvc0ltiy" path="res://assets/firebg.png" id="2_l4y27"]
+[ext_resource type="Texture2D" uid="uid://do1o70atxoh5m" path="res://assets/fondos/fuego.png" id="2_l4y27"]
 
 [node name="visual_novel" type="Node2D" node_paths=PackedStringArray("DialogueLabel", "NameLabel", "CharacterLeft", "CharacterRight", "TheBackground")]
 script = ExtResource("1_igwu6")

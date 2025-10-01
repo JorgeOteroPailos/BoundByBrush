@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bges1ejtfr2n8"
-path="res://.godot/imported/Llave_Verde_Animacion_Centrada.png-7d039db94dd02f77f91e7c1cbef17b3b.ctex"
+uid="uid://ddfywmtnhksu4"
+path="res://.godot/imported/candado_naranja_y_morado.png-7434d01a44d20d08785505cf1c02b4b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Llave_Verde_Animacion_Centrada.png"
-dest_files=["res://.godot/imported/Llave_Verde_Animacion_Centrada.png-7d039db94dd02f77f91e7c1cbef17b3b.ctex"]
+source_file="res://assets/candados/candado_naranja_y_morado.png"
+dest_files=["res://.godot/imported/candado_naranja_y_morado.png-7434d01a44d20d08785505cf1c02b4b7.ctex"]
 
 [params]
 

@@ -78,7 +78,7 @@ public partial class Circulo : CharacterBody2D
 	private void OnBodyEntered(Node body){
 
 			if (body is Player jugador){
-				GD.Print("Jugador tocado por enemigo "+colorEscrito);
+				//GD.Print("Jugador tocado por enemigo "+colorEscrito);
 				if(isDying==true || isAppearing ==true){
 					return;
 				}

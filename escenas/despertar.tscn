@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://c2ko5osp8wyc"]
 
 [ext_resource type="Script" uid="uid://ci06ty4rupijs" path="res://scripts/Despertar.cs" id="1_cdosi"]
-[ext_resource type="Texture2D" uid="uid://x667dwlw8byw" path="res://assets/fondos/Fondo_Noche_Estrellada.png" id="2_wwao1"]
+[ext_resource type="Texture2D" uid="uid://3tf3pxyr5hrw" path="res://assets/fondos/noche_estrellada.png" id="2_wwao1"]
 [ext_resource type="Texture2D" uid="uid://bkygheei2k5cb" path="res://assets/prota.png" id="3_rensm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7ak4"]

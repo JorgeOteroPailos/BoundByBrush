@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://dl4q7q2o67yb6" path="res://scripts/Musica.cs" id="3_cr4x3"]
 [ext_resource type="PackedScene" uid="uid://c60o3w37ue45k" path="res://escenas/personaje.tscn" id="4_6hejw"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="5_ro3c3"]
-[ext_resource type="Texture2D" uid="uid://bwpuei0vjcyu5" path="res://assets/Candado_Blanco.png" id="6_t4jkt"]
-[ext_resource type="Texture2D" uid="uid://b8pa7ld2ksnks" path="res://assets/fondos/Fondo_Cubismo.png" id="7_fpuh1"]
+[ext_resource type="Texture2D" uid="uid://tuvgadgpi4b0" path="res://assets/candados/candado_blanco.png" id="6_t4jkt"]
+[ext_resource type="Texture2D" uid="uid://cari0o7dc5ij3" path="res://assets/fondos/cubismo.png" id="7_fpuh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8p663"]
 size = Vector2(72, 39)

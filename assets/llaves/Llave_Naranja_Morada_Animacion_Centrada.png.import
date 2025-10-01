@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd2parvc0ltiy"
-path="res://.godot/imported/firebg.png-031b2e2aa895b1b6389b4b33f9effa85.ctex"
+uid="uid://beilwucihn6r"
+path="res://.godot/imported/Llave_Naranja_Morada_Animacion_Centrada.png-9b7dde0e50d15440f1ea56481d71ecc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/firebg.png"
-dest_files=["res://.godot/imported/firebg.png-031b2e2aa895b1b6389b4b33f9effa85.ctex"]
+source_file="res://assets/llaves/Llave_Naranja_Morada_Animacion_Centrada.png"
+dest_files=["res://.godot/imported/Llave_Naranja_Morada_Animacion_Centrada.png-9b7dde0e50d15440f1ea56481d71ecc2.ctex"]
 
 [params]
 

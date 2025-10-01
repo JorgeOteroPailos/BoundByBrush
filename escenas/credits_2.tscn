@@ -10,6 +10,7 @@ script = ExtResource("1_j5iym")
 
 [node name="TheBackground" type="TextureRect" parent="."]
 z_index = -1000
+layout_mode = 0
 offset_left = -6.0
 offset_top = -5.0
 offset_right = 1157.0

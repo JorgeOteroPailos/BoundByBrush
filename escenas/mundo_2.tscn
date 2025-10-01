@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bkae7rnoqnvvr"]
 
 [ext_resource type="Script" uid="uid://c5tcikptx2w5y" path="res://scripts/Mundo2.cs" id="1_aj8na"]
-[ext_resource type="Texture2D" uid="uid://d2fgejbnaab0b" path="res://assets/fondos/Fondo_Neoplasticismo.png" id="2_78yvl"]
+[ext_resource type="Texture2D" uid="uid://da62a2yfqrs04" path="res://assets/fondos/neoplasticismo.png" id="2_78yvl"]
 [ext_resource type="PackedScene" uid="uid://c60o3w37ue45k" path="res://escenas/personaje.tscn" id="2_aj8na"]
 [ext_resource type="PackedScene" uid="uid://dtvvpjxan4t1s" path="res://escenas/circulo.tscn" id="3_8qq5d"]
 [ext_resource type="AudioStream" uid="uid://crm7xvxvoncm7" path="res://music/Eighties Action.mp3" id="5_l1rco"]
 [ext_resource type="Script" uid="uid://dl4q7q2o67yb6" path="res://scripts/Musica.cs" id="6_i8qb5"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="19_i8qb5"]
-[ext_resource type="Texture2D" uid="uid://ddxyrtpudof00" path="res://assets/Candado_Verde.png" id="20_sbgel"]
+[ext_resource type="Texture2D" uid="uid://cih4s8k5ib48" path="res://assets/candados/candado_verde.png" id="20_sbgel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbgel"]
 size = Vector2(72, 39)

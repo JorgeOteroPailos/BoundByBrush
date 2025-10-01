@@ -22,12 +22,12 @@ public abstract partial class MundoBase : Node2D
 	protected virtual String siguienteEscena { get; }
 	
 	public void EnemigoDerrotado() {
-		GD.Print("Enemigo derrotado.");
+		//GD.Print("Enemigo derrotado.");
 		nEnemigos--;
-		GD.Print($"Quedan {nEnemigos} enemigos.");
+		//GD.Print($"Quedan {nEnemigos} enemigos.");
 		if (nEnemigos <= 0)
 		{
-			GD.Print("Todos los enemigos derrotados. Cambio de escena...");
+			GD.Print("Todos los enemigos derrotados. Cambio de escena a "+siguienteEscena);
 			GetTree().ChangeSceneToFile(siguienteEscena);
 		}else if (hayJefe){
 			if(nEnemigos==1){

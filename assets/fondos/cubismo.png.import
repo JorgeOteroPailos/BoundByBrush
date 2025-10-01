@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt45bbhie7ben"
-path="res://.godot/imported/background0.png-5c7a91ebe599a151ac2ac06c975b1036.ctex"
+uid="uid://cari0o7dc5ij3"
+path="res://.godot/imported/cubismo.png-ba5c809d4fa8053ad0807bf0d4a797f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background0.png"
-dest_files=["res://.godot/imported/background0.png-5c7a91ebe599a151ac2ac06c975b1036.ctex"]
+source_file="res://assets/fondos/cubismo.png"
+dest_files=["res://.godot/imported/cubismo.png-ba5c809d4fa8053ad0807bf0d4a797f2.ctex"]
 
 [params]
 

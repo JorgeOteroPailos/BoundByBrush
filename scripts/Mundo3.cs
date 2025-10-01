@@ -6,7 +6,7 @@ public partial class Mundo3 : MundoBase
 	[Export]
 	public int nColores=6;
 	
-	protected override String siguienteEscena=>"res://escenas/recoger_llave_3.tscn";
+	protected override String siguienteEscena=>"res://escenas/recoger_llave.tscn";
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready(){

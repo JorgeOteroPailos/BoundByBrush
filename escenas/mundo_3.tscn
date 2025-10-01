@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://03o3nqqcx7k7"]
 
 [ext_resource type="Script" uid="uid://82rdtvosb7gx" path="res://scripts/Mundo3.cs" id="1_8q8mn"]
-[ext_resource type="Texture2D" uid="uid://8to5rjnj0txi" path="res://assets/fondos/Fondo_Surrealismo.png" id="2_0nedo"]
+[ext_resource type="Texture2D" uid="uid://bf6e71qphympn" path="res://assets/fondos/surrealismo.png" id="2_0nedo"]
 [ext_resource type="AudioStream" uid="uid://b1m1rwf5w1a42" path="res://music/Slow Burn.mp3" id="3_27jmu"]
 [ext_resource type="Script" uid="uid://dl4q7q2o67yb6" path="res://scripts/Musica.cs" id="4_form0"]
 [ext_resource type="PackedScene" uid="uid://c60o3w37ue45k" path="res://escenas/personaje.tscn" id="5_yuspp"]
 [ext_resource type="PackedScene" uid="uid://dtvvpjxan4t1s" path="res://escenas/circulo.tscn" id="6_6b5o3"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="19_d0f3g"]
-[ext_resource type="Texture2D" uid="uid://djhmqrmm16jb6" path="res://assets/Candado_Naranja_Morado.png" id="20_8u36a"]
+[ext_resource type="Texture2D" uid="uid://ddfywmtnhksu4" path="res://assets/candados/candado_naranja_y_morado.png" id="20_8u36a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe15i"]
 size = Vector2(72, 39)

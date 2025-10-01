@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwpuei0vjcyu5"
-path="res://.godot/imported/Candado_Blanco.png-d6ee63e13550d594efb7af806cd8bd61.ctex"
+uid="uid://n6tr5m5ud6kn"
+path="res://.godot/imported/final.png-55d898f41da71ac17fd021c7175b93ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Candado_Blanco.png"
-dest_files=["res://.godot/imported/Candado_Blanco.png-d6ee63e13550d594efb7af806cd8bd61.ctex"]
+source_file="res://assets/fondos/final.png"
+dest_files=["res://.godot/imported/final.png-55d898f41da71ac17fd021c7175b93ad.ctex"]
 
 [params]
 

@@ -90,7 +90,7 @@ public partial class Player : CharacterBody2D
 			}
 		}
 
-		GD.Print($"Total corazones: {heartList.Count}");
+		//GD.Print($"Total corazones: {heartList.Count}");
 		
 		// Obtener referencia al Sprite2D o Control que quieres posicionar
 		var rueda = GetNode<Node2D>("rueda/Rueda");

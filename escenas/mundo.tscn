@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c4f2q54ox6mn3" path="res://scripts/Mundo.cs" id="1_xq8jy"]
 [ext_resource type="PackedScene" uid="uid://dtvvpjxan4t1s" path="res://escenas/circulo.tscn" id="2_6juyn"]
-[ext_resource type="Texture2D" uid="uid://x667dwlw8byw" path="res://assets/fondos/Fondo_Noche_Estrellada.png" id="3_txhqv"]
+[ext_resource type="Texture2D" uid="uid://3tf3pxyr5hrw" path="res://assets/fondos/noche_estrellada.png" id="3_txhqv"]
 [ext_resource type="PackedScene" uid="uid://c60o3w37ue45k" path="res://escenas/personaje.tscn" id="4_x5o5w"]
+[ext_resource type="Texture2D" uid="uid://bee31t2ux6m5e" path="res://assets/candados/candado_rojo.png" id="7_txhqv"]
 [ext_resource type="AudioStream" uid="uid://mlcxrwrqsxum" path="res://music/Unholy_Knight.mp3" id="18_2gdlm"]
 [ext_resource type="Script" uid="uid://dl4q7q2o67yb6" path="res://scripts/Musica.cs" id="19_4d33t"]
-[ext_resource type="Texture2D" uid="uid://dlv5p0hgdf6rs" path="res://assets/Candado_Rojo.png" id="21_x1ruw"]
 [ext_resource type="Texture2D" uid="uid://cls075wwknjof" path="res://assets/Puerta.png" id="22_8l5ts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnkqi"]
@@ -83,7 +83,7 @@ script = ExtResource("19_4d33t")
 [node name="candado" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(575, 55)
-texture = ExtResource("21_x1ruw")
+texture = ExtResource("7_txhqv")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(574, 73)

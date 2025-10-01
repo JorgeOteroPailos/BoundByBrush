@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlv5p0hgdf6rs"
-path="res://.godot/imported/Candado_Rojo.png-9983807840056aabdf1dec35af3e10f8.ctex"
+uid="uid://tuvgadgpi4b0"
+path="res://.godot/imported/candado_blanco.png-2a266689a2e98aa7e6957c1d123c6297.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Candado_Rojo.png"
-dest_files=["res://.godot/imported/Candado_Rojo.png-9983807840056aabdf1dec35af3e10f8.ctex"]
+source_file="res://assets/candados/candado_blanco.png"
+dest_files=["res://.godot/imported/candado_blanco.png-2a266689a2e98aa7e6957c1d123c6297.ctex"]
 
 [params]
 
