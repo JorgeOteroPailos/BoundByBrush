@@ -62,8 +62,7 @@ public partial class Bullet : Area2D
 		if (sprite.Animation != hit) // solo reproducir default si no está en hit
 			sprite.Play(default_);
 
-		if (!GetViewportRect().HasPoint(GlobalPosition) ||
-			Position.DistanceTo(originalPosition) > maxDistance)
+		if (Position.DistanceTo(originalPosition) > maxDistance)
 			QueueFree();
 	}
 	

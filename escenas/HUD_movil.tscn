@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://t2uwewuvj8s7"]
+[gd_scene load_steps=5 format=3 uid="uid://t2uwewuvj8s7"]
 
-[ext_resource type="Script" uid="uid://bmast3u1g3c5t" path="res://scripts/HUD.cs" id="1_e3vx7"]
+[ext_resource type="Script" uid="uid://bmast3u1g3c5t" path="res://scripts/HUD_movil.cs" id="1_e3vx7"]
 [ext_resource type="Texture2D" uid="uid://d2swv8t0yqg8h" path="res://assets/joystick/borde.png" id="1_up6ai"]
 [ext_resource type="Texture2D" uid="uid://bnhoih84xl2p2" path="res://assets/joystick/centro.png" id="2_e3vx7"]
+[ext_resource type="Texture2D" uid="uid://5ggh42vivhma" path="res://assets/menus/botones_iconos/pausa.png" id="4_untfa"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_e3vx7")
@@ -42,3 +43,12 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_e3vx7")
+
+[node name="BotonPausa" type="TextureButton" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -51.0
+offset_bottom = 51.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_untfa")

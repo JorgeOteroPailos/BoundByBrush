@@ -47,4 +47,6 @@ public abstract partial class MundoBase : Node2D
 		miCirculo.Aparecer();
 
 	}
+	
+	
 }

@@ -9,12 +9,7 @@ public partial class Inicio : Node
 	private Button salirButton;
 	private Button optionsButton;
 	
-	private Button muchoSonidoButton;
-	private Button sonidoParcialButton;
-	private Button pocoSonidoButton;
-	private Button mutedButton;
-	private Button ajustesButton;
-	private Button logrosButton;
+	private Pausa pausa;
 	
 	private VBoxContainer contenedor;
 	private VBoxContainer contenedor2;
@@ -32,48 +27,20 @@ public partial class Inicio : Node
 		salirButton = GetNode<Button>("exit");
 		optionsButton = GetNode<Button>("opts");
 		
-		muchoSonidoButton = GetNode<Button>("optionsMenu/VBoxContainer2/muchoSonido");
-		sonidoParcialButton = GetNode<Button>("optionsMenu/VBoxContainer2/sonidoParcial");
-		pocoSonidoButton = GetNode<Button>("optionsMenu/VBoxContainer2/pocoSonido");
-		mutedButton = GetNode<Button>("optionsMenu/VBoxContainer3/muted");
-		ajustesButton = GetNode<Button>("optionsMenu/VBoxContainer3/ajustes");
-		logrosButton = GetNode<Button>("optionsMenu/VBoxContainer3/logros");
-
-		muchoSonidoButton.Pressed += OnMuchoVolumenPressed;
-		sonidoParcialButton.Pressed += OnMedioVolumenPressed;
-		pocoSonidoButton.Pressed += OnPocoVolumenPressed;
-		mutedButton.Pressed += OnMutedPressed;
-		ajustesButton.Pressed += OnAjustesPressed;
-		logrosButton.Pressed += OnLogrosPressed;
+		paintButton.Icon = GD.Load<Texture2D>($"res://assets/menus/{Estado.idioma}/boton_pinta.png");
+		salirButton.Icon = GD.Load<Texture2D>($"res://assets/menus/{Estado.idioma}/boton_salir.png");
+		optionsButton.Icon = GD.Load<Texture2D>($"res://assets/menus/{Estado.idioma}/boton_opciones.png");
 
 		optionsButton.Pressed += OnBotonPausaPressed; // <- ButtonDown es inmediato al click
 		paintButton.Pressed += OnBotonPaintPressed; // <- ButtonDown es inmediato al click
 		salirButton.Pressed += OnBotonExitPressed; // <- ButtonDown es inmediato al click
 		
-		var optionButton = GetNode<CanvasLayer>("optionsMenu").GetNode<VBoxContainer>("VBoxContainer2").GetNode<OptionButton>("pantalla");
-		// Añadir el "texto inicial"
-		optionButton.AddItem("Screen size selector");
-		optionButton.SetItemDisabled(0, true); // Deshabilitar para que no sea seleccionable
-
-		// Añadir opciones reales
-		optionButton.AddItem("1280 x 720");
-		optionButton.AddItem("1920 x 1080");
-		optionButton.AddItem("Fullscreen");
-		optionButton.ItemSelected += OnScreenOptionSelected;
 
 	}
 
 	private void OnBotonPausaPressed()
 	{
-		GD.Print("Botón pulsado, mostrando menú de opciones");
-		if(seve){
-			_pauseMenu.Visible = false;
-			seve=false;	
-		} 
-		else{
-			_pauseMenu.Visible = true;
-			seve=true;
-		}
+		pausa.TogglePause();
 	}
 	
 	private void OnBotonExitPressed()
@@ -88,24 +55,6 @@ public partial class Inicio : Node
 		Estado.indiceNovela=0;
 		GetTree().ChangeSceneToFile("res://escenas/visual_novel.tscn");
 			return;
-		
-	}
-	private void OnMuchoVolumenPressed(){
-		
-	}
-	private void OnMedioVolumenPressed(){
-		
-	}
-	private void OnPocoVolumenPressed(){
-		
-	}
-	private void OnMutedPressed(){
-		
-	}
-	private void OnAjustesPressed(){
-		
-	}
-	private void OnLogrosPressed(){
 		
 	}
 	

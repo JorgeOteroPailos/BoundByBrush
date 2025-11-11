@@ -54,13 +54,13 @@ public partial class Player : CharacterBody2D
 	{
 		_getInput = GetKeyboardInput;
 		_isMobile = OS.HasFeature("mobile");
+		//_isMobile=true;
 		
-		//if (_isMobile) 
 		if(_isMobile)
 		{
 			_getInput = GetJoystickInput;
 			// Cargar la escena del HUD
-			PackedScene hudScene = GD.Load<PackedScene>("res://escenas/HUD.tscn");
+			PackedScene hudScene = GD.Load<PackedScene>("res://escenas/HUD_movil.tscn");
 
 			// Instanciar
 			CanvasLayer hud = (CanvasLayer)hudScene.Instantiate();
@@ -119,8 +119,6 @@ public partial class Player : CharacterBody2D
 		AddChild(shootTimer);
 		
 		asertarColor();
-
-	
 	}
 	
 	public void SetJoystickInput(Vector2 input)
@@ -148,85 +146,81 @@ public partial class Player : CharacterBody2D
 		return velocity.Normalized();
 	}
 
-	public override void _PhysicsProcess(double delta)
-	{
-	
-	// ---- MOVIMIENTO ----
-	Vector2 inputVector = _getInput();
+	public override void _PhysicsProcess(double delta){
+		// ---- MOVIMIENTO ----
+		Vector2 inputVector = _getInput();
 
-	// zona muerta
-	if (inputVector.Length() < 0.1f)
-		inputVector = Vector2.Zero;
+		// zona muerta
+		if (inputVector.Length() < 0.1f)
+			inputVector = Vector2.Zero;
 
-	// mover
-	Velocity = inputVector * speed;
-	MoveAndSlide();
+		// mover
+		Velocity = inputVector * speed;
+		MoveAndSlide();
 
-	// limitar dentro de los bordes
-	GlobalPosition = new Vector2(
-		Mathf.Clamp(GlobalPosition.X, minX, maxX),
-		Mathf.Clamp(GlobalPosition.Y, minY, maxY)
-	);
+		// limitar dentro de los bordes
+		GlobalPosition = new Vector2(
+			Mathf.Clamp(GlobalPosition.X, minX, maxX),
+			Mathf.Clamp(GlobalPosition.Y, minY, maxY)
+		);
 
-	
-	// ---- ANIMACIONES ----
-	if (Velocity != Vector2.Zero)
-	{
+		
+		// ---- ANIMACIONES ----
+		if (Velocity != Vector2.Zero)
+		{
 
-		float angle = Mathf.RadToDeg(Mathf.Atan2(Velocity.Y, Velocity.X));
-		string anim = "idle";
-		bool flipH = personajeAnimado.FlipH;
+			float angle = Mathf.RadToDeg(Mathf.Atan2(Velocity.Y, Velocity.X));
+			string anim = "idle";
+			bool flipH = personajeAnimado.FlipH;
 
-		if (angle > -22.5f && angle <= 22.5f)
-		{
-			anim = "run_lado";   // derecha
-			flipH = true;
-		}
-		else if (angle > 22.5f && angle <= 67.5f)
-		{
-			anim = "run_abajo_diagonal";
-			flipH = true;
-		}
-		else if (angle > 67.5f && angle <= 112.5f)
-		{
-			anim = "run_abajo";
-		}
-		else if (angle > 112.5f && angle <= 157.5f)
-		{
-			anim = "run_abajo_diagonal";
-			flipH = false;
-		}
-		else if (angle > 157.5f || angle <= -157.5f)
-		{
-			anim = "run_lado";   // izquierda
-			flipH = false;
-		}
-		else if (angle > -157.5f && angle <= -112.5f)
-		{
-			anim = "run_arriba_diagonal";
-			flipH = false;
-		}
-		else if (angle > -112.5f && angle <= -67.5f)
-		{
-			anim = "run_arriba";
-		}
-		else if (angle > -67.5f && angle <= -22.5f)
-		{
-			anim = "run_arriba_diagonal";
-			flipH = true;
-		}
+			if (angle > -22.5f && angle <= 22.5f)
+			{
+				anim = "run_lado";   // derecha
+				flipH = true;
+			}
+			else if (angle > 22.5f && angle <= 67.5f)
+			{
+				anim = "run_abajo_diagonal";
+				flipH = true;
+			}
+			else if (angle > 67.5f && angle <= 112.5f)
+			{
+				anim = "run_abajo";
+			}
+			else if (angle > 112.5f && angle <= 157.5f)
+			{
+				anim = "run_abajo_diagonal";
+				flipH = false;
+			}
+			else if (angle > 157.5f || angle <= -157.5f)
+			{
+				anim = "run_lado";   // izquierda
+				flipH = false;
+			}
+			else if (angle > -157.5f && angle <= -112.5f)
+			{
+				anim = "run_arriba_diagonal";
+				flipH = false;
+			}
+			else if (angle > -112.5f && angle <= -67.5f)
+			{
+				anim = "run_arriba";
+			}
+			else if (angle > -67.5f && angle <= -22.5f)
+			{
+				anim = "run_arriba_diagonal";
+				flipH = true;
+			}
 
-		personajeAnimado.FlipH = flipH;
-		if (personajeAnimado.Animation != anim)
-			personajeAnimado.Play(anim);
-		}
-		else
-		{
+			personajeAnimado.FlipH = flipH;
+			if (personajeAnimado.Animation != anim)
+				personajeAnimado.Play(anim);
+		}else{
 			Velocity = Vector2.Zero;
 			if (personajeAnimado.Animation != "idle")
 				personajeAnimado.Play("idle");
 		}
-	
+
 		if(!Input.IsAnythingPressed()){
 			personajeAnimado.Play("idle");
 		}
@@ -272,8 +266,6 @@ public partial class Player : CharacterBody2D
 			}
 			
 			asertarColor();
-			
-		
 	}
 	
 	private void asertarColor(){
@@ -307,7 +299,6 @@ public partial class Player : CharacterBody2D
 			// Asignar cursor personalizado
 			Input.SetCustomMouseCursor(tex, Input.CursorShape.Arrow, centro);
 		}
-
 	}
 
 	public void Shoot(Vector2 origen, Vector2 objetivo, int colorDisparo){
@@ -327,7 +318,6 @@ public partial class Player : CharacterBody2D
 		GetTree().CurrentScene.AddChild(bullet);
 		
 		shootTimer.Start();
-
 	}
 	
 	public void takeDamage() {
@@ -349,7 +339,6 @@ public partial class Player : CharacterBody2D
 		}
 	}
 
-	
 	private void updateLife(){
 		for (int i = 0; i < heartList.Count; i++){
 			bool herir = i >= health;
@@ -371,8 +360,7 @@ public partial class Player : CharacterBody2D
 			personajeAnimado.Visible = !personajeAnimado.Visible;
 	}
 	
-	public void SetNColores(int nuevoValor)
-	{
+	public void SetNColores(int nuevoValor){
 		nColores = nuevoValor;
 
 		// Normalizar color para que sea válido
@@ -394,6 +382,7 @@ public partial class Player : CharacterBody2D
 		
 		asertarColor();
 	}
+
 	/*
 	public void OnHitByBullet(Node bullet, Player player){
 		//notese que player aquí es null, pq la bala la disparó el jefe

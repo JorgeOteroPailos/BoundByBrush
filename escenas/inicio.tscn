@@ -1,10 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkfpawuhelmr5"]
+[gd_scene load_steps=9 format=3 uid="uid://bkfpawuhelmr5"]
 
 [ext_resource type="Script" uid="uid://d1lht5ykk1fya" path="res://scripts/Inicio.cs" id="1_7e6sy"]
-[ext_resource type="Texture2D" uid="uid://dlkb00wlnes2a" path="res://assets/Paint.png" id="2_7e6sy"]
 [ext_resource type="Texture2D" uid="uid://dlobbbo4j315r" path="res://assets/fondos/portada.png" id="2_yw1ns"]
-[ext_resource type="Texture2D" uid="uid://bww45ej3hsvu7" path="res://assets/Options_Button_gris.png" id="4_c3gln"]
-[ext_resource type="Texture2D" uid="uid://5tsacpaxgdxh" path="res://assets/Exit_Button.png" id="4_xagyt"]
 [ext_resource type="Texture2D" uid="uid://byf35wk4dh8f" path="res://assets/High_Volume_Button.png" id="6_gs6pg"]
 [ext_resource type="Texture2D" uid="uid://cly4ircj4jfo4" path="res://assets/Medium_Volume_Button.png" id="7_ml20m"]
 [ext_resource type="Texture2D" uid="uid://bmqa5x76tu1ng" path="res://assets/Low_Volume_Button.png" id="8_qdnke"]
@@ -27,7 +24,6 @@ offset_right = 435.0
 offset_bottom = 570.0
 scale = Vector2(0.920742, 0.882276)
 mouse_default_cursor_shape = 2
-icon = ExtResource("2_7e6sy")
 
 [node name="opts" type="Button" parent="."]
 z_index = 5
@@ -36,7 +32,6 @@ offset_top = 428.0
 offset_right = 602.0
 offset_bottom = 487.0
 mouse_default_cursor_shape = 2
-icon = ExtResource("4_c3gln")
 
 [node name="exit" type="Button" parent="."]
 z_index = 5
@@ -45,7 +40,6 @@ offset_top = 498.0
 offset_right = 602.0
 offset_bottom = 557.0
 mouse_default_cursor_shape = 2
-icon = ExtResource("4_xagyt")
 
 [node name="optionsMenu" type="CanvasLayer" parent="."]
 
